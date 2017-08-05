@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 class HomeController extends Controller
 {
     /**
@@ -21,8 +21,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function aaaa()
     {
         return view('home');
     }
+
+    public function index()
+    {
+        $info =  DB::table('overview')->get();
+        return view('index',
+            ['info' =>  $info ]);
+    }
+
 }
