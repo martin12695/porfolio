@@ -19,54 +19,19 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="odd gradeX">
+              @foreach($info as $item)
+              <tr>
                   <td width="150">
-                  	<a> <img width="145" style="display: block; margin-left: auto; margin-right: auto;" src="{{url('/images/1b698cd1-4de6-49a8-beb3-c194cb372fe8_rwc_0x-19x1185x791x1185.jpg')}}" alt=""> </a>
+                  	<a> <img width="145" style="display: block; margin-left: auto; margin-right: auto;" src="{{url('/images/'.$item->link_image)}}" alt=""> </a>
                   </td>
-                  <td>Internet
-                    Explorer 4.0</td>
-                  <td>Win 95+</td>
+                  <td>{{$item->title}}</td>
+                  <td>{{$item->short_des}}</td>
                   <td class="center">
-                  	<a href="#" class="btn btn-primary btn-mini">Edit</a>
+                  	<a href="./edit/{{$item->id}}" class="btn btn-primary btn-mini">Edit</a>
                   	<a href="#" class="btn btn-danger btn-mini">Delete</a>
                   </td>
                 </tr>
-                <tr class="even gradeC">
-                  <td width="150">
-                  	<a> <img width="145" style="display: block; margin-left: auto; margin-right: auto;" src="{{url('/images/1b698cd1-4de6-49a8-beb3-c194cb372fe8_rwc_0x-19x1185x791x1185.jpg')}}" alt=""> </a>
-                  </td>
-                  <td>Internet
-                    Explorer 5.0</td>
-                  <td>Win 95+</td>
-                  <td class="center">
-                  	<a href="#" class="btn btn-primary btn-mini">Edit</a>
-                  	<a href="#" class="btn btn-danger btn-mini">Delete</a>
-                  </td>
-                </tr>
-                <tr class="odd gradeA">
-                  <td width="150">
-                  	<a> <img width="145" style="display: block; margin-left: auto; margin-right: auto;" src="{{url('/images/1b698cd1-4de6-49a8-beb3-c194cb372fe8_rwc_0x-19x1185x791x1185.jpg')}}" alt=""> </a>
-                  </td>
-                  <td>Internet
-                    Explorer 5.5</td>
-                  <td>Win 95+</td>
-                  <td class="center">
-                  	<a href="#" class="btn btn-primary btn-mini">Edit</a>
-                  	<a href="#" class="btn btn-danger btn-mini">Delete</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="150">
-                  	<a> <img width="145" style="display: block; margin-left: auto; margin-right: auto;" src="{{url('/images/1b698cd1-4de6-49a8-beb3-c194cb372fe8_rwc_0x-19x1185x791x1185.jpg')}}" alt=""> </a>
-                  </td>
-                  <td>Internet
-                    Explorer 6</td>
-                  <td>Win 98+</td>
-                  <td class="center">
-                  	<a href="#" class="btn btn-primary btn-mini">Edit</a>
-                  	<a href="#" class="btn btn-danger btn-mini">Delete</a>
-                  </td>
-                </tr>
+              @endforeach
               </tbody>
             </table>
           </div>

@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Auth\Middleware\Authenticate;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,16 +13,18 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/dashboard', function () {
-    return view('admin');
+
+Route::group(['prefix' => 'dashboard'], function () {
+    Route::get('/', 'AdminController@index');
+    Route::get('/project', 'AdminController@getProject');
+    Route::get('/project/add', 'AdminController@addProject');
+    Route::post('/project/save', 'AdminController@saveProject');
+    Route::get('/project/edit/{id}', 'AdminController@editProject')->where(['id' => '[0-9]+']);
 });
 
-Route::get('/dashboard/project', function () {
-    return view('project');
-});
 
-Route::get('/dashboard/project/edit', function () {
-    return view('edit');
+Route::get('/dashboard/project/add', function () {
+    return view('add');
 });
 
 Auth::routes();

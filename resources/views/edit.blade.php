@@ -9,23 +9,24 @@
           <h5>Edit project</h5>
         </div>
         <div class="widget-content nopadding">
-          <form action="#" method="get" class="form-horizontal">
+          <form action="/dashboard/project/save" method="POST" class="form-horizontal">
+            {{ csrf_field() }}
             <div class="control-group">
               <label class="control-label">Title :</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="Title">
+                <input name="title" type="text" class="span11" placeholder="Title" value="{{$info->title}}">
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Short description :</label>
               <div class="controls">
-                <input type="text" class="span11" placeholder="Short description">
+                <input name="short_des" type="text" class="span11" placeholder="Short description" value="{{$info->short_des}}">
               </div>
             </div>
             <div class="control-group">
               <label class="control-label">Content :</label>
               <div class="controls">
-                <textarea class="span11 textarea_editor" rows="6"></textarea>
+                <textarea class="span11 textarea_editor" rows="6" name="content">{{$info->content}}</textarea>
               </div>
             </div>
             <div class="control-group">
