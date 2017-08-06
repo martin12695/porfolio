@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="form-actions">
-                            <button id="btnSubmit" type="submit" class="btn btn-success">Save</button>
+                            <button id="btnSubmit" type="button" class="btn btn-success">Save</button>
                         </div>
                     </form>
                 </div>
@@ -73,11 +73,12 @@
         </style>
         <script>
             $('#btnSubmit').click(function(e){
-                e.preventDefault();
                 var $form = $('#formAction');
                 var txt = $('#Content').val();
-                if (!$form[0].checkValidity() && txt != '') {
+                if ($form.valid() && txt != '') {
                     $form.submit();
+                } else {
+                    return;
                 }
             });
         </script>
