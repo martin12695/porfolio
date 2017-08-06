@@ -35,7 +35,7 @@ class AdminController extends Controller
     }
 
     public function saveProject(Request $request) {
-        $data = $request->input();
+        $data = $request->input();;
         $mytime = Carbon\Carbon::now();
         DB::table('overview')->insert(
             [   'title' => $data['title'],
