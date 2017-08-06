@@ -35,13 +35,21 @@ class AdminController extends Controller
     }
 
     public function saveProject(Request $request) {
-        $data = $request->input();;
+        $nameImage = '';
+
+        $data = $request->input();
+        if ( $request->hasFile('image') ){
+            $image = $request->file('image');
+            $nameImage = time().$image->getClientOriginalName();
+            $image->move('thum',$nameImage);
+        }
         $mytime = Carbon\Carbon::now();
         DB::table('overview')->insert(
             [   'title' => $data['title'],
                 'content' => $data['content'],
                 'short_des' => $data['short_des'],
-                'created'   => $mytime->toDateTimeString()
+                'created'   => $mytime->toDateTimeString(),
+                'link_image' => $nameImage
             ]
         );
        return back()->with('sucess', 'Add Project Sucessfully');

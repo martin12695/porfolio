@@ -30,7 +30,7 @@
                     <h5>Add new project</h5>
                 </div>
                 <div class="widget-content nopadding">
-                    <form id="formAction" action="/dashboard/project/save" method="POST" class="form-horizontal">
+                    <form id="formAction" enctype="multipart/form-data" action="/dashboard/project/save" method="POST" class="form-horizontal">
                         {{ csrf_field() }}
                         <div class="control-group">
                             <label class="control-label">Title :</label>
@@ -54,7 +54,7 @@
                             <label class="control-label">Thumbnail :</label>
                             <div class="controls">
                                 <label id="fileUpload" for="Thumbnail">Browser</label>
-                                <input type="file" id="Thumbnail" onchange="readURL(this)">
+                                <input type="file" id="Thumbnail" onchange="readURL(this)" name="image">
                                 <div id="imagePreview">
                                     <span id="btnRemove">
                                         <i class="icon-remove-sign"></i>
