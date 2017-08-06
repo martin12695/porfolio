@@ -13,6 +13,32 @@
 <link rel="stylesheet" href="{{url('/admin_temp/css/jquery.gritter.css')}}" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{{url('/admin_temp/css/bootstrap-wysihtml5.css')}}" />
+
+<script src="{{url('/admin_temp/js/jquery.min.js')}}"></script>
+
+<script src="{{url('/admin_temp/js/excanvas.min.js')}}"></script>  
+<script src="{{url('/admin_temp/js/jquery.ui.custom.js')}}"></script> 
+<script src="{{url('/admin_temp/js/bootstrap.min.js')}}"></script> 
+<script src="{{url('/admin_temp/js/jquery.flot.min.js')}}"></script> 
+<script src="{{url('/admin_temp/js/jquery.flot.resize.min.js')}}"></script> 
+<script src="{{url('/admin_temp/js/jquery.peity.min.js')}}"></script> 
+<script src="{{url('/admin_temp/js/fullcalendar.min.js')}}"></script> 
+<script src="{{url('/admin_temp/js/matrix.js')}}"></script> 
+<script src="{{url('/admin_temp/js/matrix.dashboard.js')}}"></script> 
+<script src="{{url('/admin_temp/js/jquery.gritter.min.js')}}"></script> 
+<script src="{{url('/admin_temp/js/matrix.interface.js')}}"></script> 
+<script src="{{url('/admin_temp/js/matrix.chat.js')}}"></script> 
+<script src="{{url('/admin_temp/js/jquery.validate.js')}}"></script> 
+<script src="{{url('/admin_temp/js/matrix.form_validation.js')}}"></script> 
+<script src="{{url('/admin_temp/js/jquery.wizard.js')}}"></script> 
+<script src="{{url('/admin_temp/js/jquery.uniform.js')}}"></script> 
+<script src="{{url('/admin_temp/js/select2.min.js')}}"></script> 
+<script src="{{url('/admin_temp/js/matrix.popover.js')}}"></script> 
+<script src="{{url('/admin_temp/js/jquery.dataTables.min.js')}}"></script> 
+<script src="{{url('/admin_temp/js/matrix.tables.js')}}"></script> 
+<script src="{{url('/admin_temp/js/wysihtml5-0.3.0.js')}}"></script> 
+<script src="{{url('/admin_temp/js/jquery.peity.min.js')}}"></script> 
+<script src="{{url('/admin_temp/js/bootstrap-wysihtml5.js')}}"></script> 
 </head>
 <body>
 
@@ -134,30 +160,6 @@
 
 <!--end-Footer-part-->
 
-<script src="{{url('/admin_temp/js/excanvas.min.js')}}"></script> 
-<script src="{{url('/admin_temp/js/jquery.min.js')}}"></script> 
-<script src="{{url('/admin_temp/js/jquery.ui.custom.js')}}"></script> 
-<script src="{{url('/admin_temp/js/bootstrap.min.js')}}"></script> 
-<script src="{{url('/admin_temp/js/jquery.flot.min.js')}}"></script> 
-<script src="{{url('/admin_temp/js/jquery.flot.resize.min.js')}}"></script> 
-<script src="{{url('/admin_temp/js/jquery.peity.min.js')}}"></script> 
-<script src="{{url('/admin_temp/js/fullcalendar.min.js')}}"></script> 
-<script src="{{url('/admin_temp/js/matrix.js')}}"></script> 
-<script src="{{url('/admin_temp/js/matrix.dashboard.js')}}"></script> 
-<script src="{{url('/admin_temp/js/jquery.gritter.min.js')}}"></script> 
-<script src="{{url('/admin_temp/js/matrix.interface.js')}}"></script> 
-<script src="{{url('/admin_temp/js/matrix.chat.js')}}"></script> 
-<script src="{{url('/admin_temp/js/jquery.validate.js')}}"></script> 
-<script src="{{url('/admin_temp/js/matrix.form_validation.js')}}"></script> 
-<script src="{{url('/admin_temp/js/jquery.wizard.js')}}"></script> 
-<script src="{{url('/admin_temp/js/jquery.uniform.js')}}"></script> 
-<script src="{{url('/admin_temp/js/select2.min.js')}}"></script> 
-<script src="{{url('/admin_temp/js/matrix.popover.js')}}"></script> 
-<script src="{{url('/admin_temp/js/jquery.dataTables.min.js')}}"></script> 
-<script src="{{url('/admin_temp/js/matrix.tables.js')}}"></script> 
-<script src="{{url('/admin_temp/js/wysihtml5-0.3.0.js')}}"></script> 
-<script src="{{url('/admin_temp/js/jquery.peity.min.js')}}"></script> 
-<script src="{{url('/admin_temp/js/bootstrap-wysihtml5.js')}}"></script> 
 <script>
         $('.textarea_editor').wysihtml5();
 </script>

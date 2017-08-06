@@ -1,32 +1,36 @@
 @extends('layouts.adlayout')
-@section('page-title', 'Edit project')
+@section('page-title', 'Add new project')
 @section('activeSidebar', 'active')
 @section('content')
     <div class="row-fluid">
+        <div style="display: none" id="errorBox" class="alert alert-error alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
+              <h4 id="errorTitle" class="alert-heading">Error!</h4>
+              <span id="errorContent">Oop! Somethings happened!</span>
+        </div>
         <div class="span12">
             <div class="widget-box">
                 <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
                     <h5>Edit project</h5>
                 </div>
                 <div class="widget-content nopadding">
-                    <form action="/dashboard/project/save" method="POST" class="form-horizontal">
+                    <form id="formAction" action="/dashboard/project/save" method="POST" class="form-horizontal">
                         {{ csrf_field() }}
                         <div class="control-group">
                             <label class="control-label">Title :</label>
                             <div class="controls">
-                                <input name="title" type="text" class="span11" placeholder="Title">
+                                <input id="prjTitle" name="title" type="text" class="span11" placeholder="Title" required>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">Short description :</label>
                             <div class="controls">
-                                <input name="short_des" type="text" class="span11" placeholder="Short description">
+                                <input name="short_des" type="text" class="span11" placeholder="Short description" required>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">Content :</label>
                             <div class="controls">
-                                <textarea class="span11 textarea_editor" rows="6" name="content"></textarea>
+                                <textarea class="span11 textarea_editor" rows="12" name="content" id="Content"></textarea>
                             </div>
                         </div>
                         <div class="control-group">
@@ -37,7 +41,7 @@
                             </div>
                         </div>
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-success">Save</button>
+                            <button id="btnSubmit" type="submit" class="btn btn-success">Save</button>
                         </div>
                     </form>
                 </div>
@@ -67,5 +71,15 @@
                 display: none;
             }
         </style>
+        <script>
+            $('#btnSubmit').click(function(e){
+                e.preventDefault();
+                var $form = $('#formAction');
+                var txt = $('#Content').val();
+                if (!$form[0].checkValidity() && txt != '') {
+                    $form.submit();
+                }
+            });
+        </script>
     </div>
 @endsection
