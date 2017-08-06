@@ -3,14 +3,31 @@
 @section('activeSidebar', 'active')
 @section('content')
     <div class="row-fluid">
-        <div style="display: none" id="errorBox" class="alert alert-error alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
-              <h4 id="errorTitle" class="alert-heading">Error!</h4>
-              <span id="errorContent">Oop! Somethings happened!</span>
-        </div>
+        
         <div class="span12">
+            <!-- Thong bao complete -->
+
+            <div class="alert alert-success alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
+              <h4 class="alert-heading"><i class="icon-ok"></i> Success!</h4>
+              Tou're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. 
+            </div>
+
+            <div class="alert alert-error alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
+                  <h4 class="alert-heading"><i class="icon-remove-sign"></i> Error!</h4>
+                  <span >Oop! Somethings happened!</span>
+            </div>
+
+
+
+
+
+            <div id="errorBox" style="display: none;" class="alert alert-error alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
+                  <h4 id="errorTitle" class="alert-heading">Error!</h4>
+                  <span id="errorContent">Oop! Somethings happened!</span>
+            </div>
             <div class="widget-box">
                 <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
-                    <h5>Edit project</h5>
+                    <h5>Add new project</h5>
                 </div>
                 <div class="widget-content nopadding">
                     <form id="formAction" action="/dashboard/project/save" method="POST" class="form-horizontal">
@@ -30,15 +47,21 @@
                         <div class="control-group">
                             <label class="control-label">Content :</label>
                             <div class="controls">
-                                <textarea class="span11 textarea_editor" rows="12" name="content" id="Content"></textarea>
+                                <textarea class="span11 textarea_editor" rows="12" name="content" id="Content" resize="true"></textarea>
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">Thumbnail :</label>
                             <div class="controls">
                                 <label id="fileUpload" for="Thumbnail">Browser</label>
-                                <input type="file" id="Thumbnail">
+                                <input type="file" id="Thumbnail" onchange="readURL(this)">
+                                <div id="imagePreview">
+                                    <span id="btnRemove">
+                                        <i class="icon-remove-sign"></i>
+                                    </span>
+                                </div>
                             </div>
+
                         </div>
                         <div class="form-actions">
                             <button id="btnSubmit" type="button" class="btn btn-success">Save</button>
@@ -78,8 +101,35 @@
                 if ($form.valid() && txt != '') {
                     $form.submit();
                 } else {
+                    $('#errorContent').html('Your content is empty! Please enter your content');
+                    $('#errorBox').show();
+                    $(window).scrollTop(100);
+                    setTimeout(function(){
+                        $('#errorBox').fadeOut();
+                    }, 3000);
                     return;
                 }
+            });
+
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#imagePreview').css('background-image', 'url('+e.target.result+')');
+                        $('#imagePreview').show();
+                        $('#fileUpload').hide();
+                            
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $('#btnRemove').click(function(){
+                $('#Thumbnail').val('');
+                $('#imagePreview').hide();
+                $('#fileUpload').show();
             });
         </script>
     </div>
