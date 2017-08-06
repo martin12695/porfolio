@@ -9,7 +9,14 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
 		@yield('style.css')
+
+
+		<!-- jQuery -->
+		<script src="./js/jquery-3.2.1.min.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="./js/bootstrap.min.js"></script>
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,17 +26,22 @@
 		<![endif]-->
 	</head>
 	<body>
+		<div id="loading">
+			<div id="LoadingGif">&nbsp;</div>
+		</div>
 		<section id="header">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="logo">&nbsp;</div>
+						<div class="logo"><a href="/">&nbsp;</a></div>
 					</div>
 					<div class="col-md-8 navbar">
 						<ul>
-							<li><a href="#">Dự án</a></li>
+							<li><a href="#">Project</a></li>
 							<li><a href="#">Concept</a></li>
 							<li><a href="#">Profile</a></li>
+							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
 						</ul>
 					</div>
 				</div>
@@ -47,10 +59,13 @@
 				<h3>copyright © 2017 | @yield('Author')</h3>
 			</div>
 		</section>
-		<!-- jQuery -->
-		<script src="./js/jquery-3.2.1.min.js"></script>
-		<!-- Bootstrap JavaScript -->
-		<script src="./js/bootstrap.min.js"></script>
+
+		<script>
+			window.onload = function(){
+				$('#loading').fadeOut();
+			};
+		</script>
+		
 		<!-- Main js -->
 		@yield('Mainjs')
 	</body>
