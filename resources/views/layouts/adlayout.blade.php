@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="{{url('/admin_temp/css/jquery.gritter.css')}}" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{{url('/admin_temp/css/bootstrap-wysihtml5.css')}}" />
+<link rel="stylesheet" href="{{url('/admin_temp/css/custom.css')}}" />
 
 <script src="{{url('/admin_temp/js/jquery.min.js')}}"></script>
 
