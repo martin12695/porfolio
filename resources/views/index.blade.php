@@ -5,7 +5,7 @@
 	<div class="col-md-3">
 		<div class="project">
 			<a href="#">
-				<img src="./images/{{$item->link_image}}" alt="Project 1">
+				<img src="./images/thum/{{$item->link_image}}" alt="{{$item->link_image}}">
 			</a>
 			<div class="info">
 				<a href="#">

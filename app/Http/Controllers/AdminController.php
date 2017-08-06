@@ -36,12 +36,11 @@ class AdminController extends Controller
 
     public function saveProject(Request $request) {
         $nameImage = '';
-
         $data = $request->input();
         if ( $request->hasFile('image') ){
             $image = $request->file('image');
             $nameImage = time().$image->getClientOriginalName();
-            $image->move('thum',$nameImage);
+            $image->move('images/thum/',$nameImage);
         }
         $mytime = Carbon\Carbon::now();
         DB::table('overview')->insert(
@@ -52,7 +51,7 @@ class AdminController extends Controller
                 'link_image' => $nameImage
             ]
         );
-       return back()->with('sucess', 'Add Project Sucessfully');
+       return back()->with('response', 1);
 
     }
 

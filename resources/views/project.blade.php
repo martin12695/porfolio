@@ -22,7 +22,7 @@
               @foreach($info as $item)
               <tr>
                   <td width="150">
-                  	<a> <img width="145" style="display: block; margin-left: auto; margin-right: auto;" src="{{url('/thum/'.$item->link_image)}}" alt=""> </a>
+                  	<a> <img width="145" style="display: block; margin-left: auto; margin-right: auto;" src="{{url('/images/thum/'.$item->link_image)}}" alt=""> </a>
                   </td>
                   <td>{{$item->title}}</td>
                   <td>{{$item->short_des}}</td>

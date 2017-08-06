@@ -6,21 +6,18 @@
         
         <div class="span12">
             <!-- Thong bao complete -->
-
+            @if(Session::get('response') && Session::get('response')==1)
             <div class="alert alert-success alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
-              <h4 class="alert-heading"><i class="icon-ok"></i> Success!</h4>
-              Tou're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. 
+              <h4 class="alert-heading"><i class="icon-ok"></i> Add project successfully!</h4>
             </div>
+            @endif
 
+            @if(Session::get('response') && Session::get('response')==2)
             <div class="alert alert-error alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
                   <h4 class="alert-heading"><i class="icon-remove-sign"></i> Error!</h4>
                   <span >Oop! Somethings happened!</span>
             </div>
-
-
-
-
-
+            @endif
             <div id="errorBox" style="display: none;" class="alert alert-error alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
                   <h4 id="errorTitle" class="alert-heading">Error!</h4>
                   <span id="errorContent">Oop! Somethings happened!</span>
