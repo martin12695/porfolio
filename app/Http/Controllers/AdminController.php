@@ -23,7 +23,7 @@ class AdminController extends Controller
     }
 
     public function getProject() {
-        $info = DB::table('overview')->select('id','title','short_des','link_image')->get();
+        $info = DB::table('overview')->select('id','title','short_des','link_image')->paginate(5);
         return view ('project', [
             'info' => $info,
             'page' => 'project'
@@ -51,5 +51,10 @@ class AdminController extends Controller
     public function editProject($id) {
         $info = DB::table('overview')->where('id',$id)->first();
         return view ('edit',['info' => $info]);
+    }
+
+    public function deleteProject ($id) {
+        DB::table('overview')->where('id',$id)->delete();
+        return back();
     }
 }

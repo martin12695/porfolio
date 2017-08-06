@@ -27,14 +27,15 @@
                   <td>{{$item->title}}</td>
                   <td>{{$item->short_des}}</td>
                   <td class="center">
-                  	<a href="./edit/{{$item->id}}" class="btn btn-primary btn-mini">Edit</a>
-                  	<a href="#" class="btn btn-danger btn-mini">Delete</a>
+                  	<a href="{{url('/dashboard/project/edit/'.$item->id)}}" class="btn btn-primary btn-mini">Edit</a>
+                  	<a href="{{url('/dashboard/project/delete/'.$item->id)}}" class="btn btn-danger btn-mini" onclick="return confirm('Are you sure want to delete project?')">Delete</a>
                   </td>
                 </tr>
               @endforeach
               </tbody>
             </table>
           </div>
+            {{ $info->links() }}
         </div>
       </div>
     </div>
