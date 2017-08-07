@@ -1,5 +1,6 @@
 @extends('layouts.layout')
 @section('page-title', 'Kon studio')
+@section('customJs', 'index.js')
 @section('content')
 	@foreach($info as $item)
 	<div class="col-md-3">
@@ -14,7 +15,7 @@
 						{{$item->title}}
 						<hr>
 					</h1>
-					<p>
+					<p class="short-des">
 						{{$item->short_des}}
 					</p>
 				</a>
