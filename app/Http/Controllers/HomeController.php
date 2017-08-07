@@ -23,7 +23,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $info =  DB::table('overview')->get();
+        $info =  DB::table('overview')->orderby('id','des')->get();
         return view('index',
             ['info' =>  $info ]);
     }
