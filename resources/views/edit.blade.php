@@ -34,6 +34,11 @@
               <div class="controls">
                 <label id="fileUpload" for="Thumbnail">Browser</label>
                 <input type="file" id="Thumbnail">
+                <div id="imagePreview" style="background-image: url('https://www.w3schools.com/css/trolltunga.jpg');">
+                    <span id="btnRemove" data-value="">
+                        <i class="icon-remove-sign"></i>
+                    </span>
+                </div>
               </div>
             </div>
             <div class="form-actions">
@@ -66,6 +71,28 @@
         #Thumbnail{
           display: none;
         }
+        #imagePreview{
+          display: block;
+        }
+        #fileUpload{
+          display: none;
+        }
       </style>
+      <script>
+        var AJAX_PATH = './dashboard/project/edit/delete';
+        $('#btnRemove').click(function(){
+          var prjID = $('#btnRemove').attr('data-value');
+          $.post(AJAX_PATH+prjID,
+            {
+              //data
+            },
+            function(data){
+              //if success
+              $('#fileUpload').show();
+              $('#imagePreview').hide();
+            }
+          );
+        });
+      </script>
     </div>
 @endsection

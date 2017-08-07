@@ -5,7 +5,8 @@
 	<div class="col-md-3">
 		<div class="project">
 			<a href="#">
-				<img src="./images/thum/{{$item->link_image}}" alt="{{$item->link_image}}">
+				
+				<div class="prv" style="background-image: url('./images/thum/{{$item->link_image}}');">&nbsp;</div>
 			</a>
 			<div class="info">
 				<a href="#">
