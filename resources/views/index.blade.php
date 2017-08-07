@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('page-title', 'Kon studio')
+@section('page-title', 'Home')
 @section('customJs', 'index.js')
 @section('content')
 	@foreach($info as $item)

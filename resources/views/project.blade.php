@@ -1,6 +1,8 @@
 @extends('layouts.adlayout')
 @section('page-title', 'Project manage')
 @section('activeSidebar', 'active')
+@section('addlink', './project/add')
+@section('isHidden', '')
 @section('content')
 	<div class="row-fluid">
       <div class="span12">

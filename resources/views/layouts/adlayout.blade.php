@@ -63,7 +63,7 @@
         </li>
       </ul>
     </li>
-    <li class=""><a target="_blank" ="" href="/"><i class="icon icon-share-alt"></i> <span class="text">Xem trang</span></a></li>
+    <li class=""><a target="_blank" href="/"><i class="icon icon-share-alt"></i> <span class="text">Visit site</span></a></li>
   </ul>
 </div>
 <!--close-top-Header-menu-->
@@ -81,23 +81,23 @@
       </ul>
     </li>
 
-    <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Concept</span> <span class="label label-important">2</span></a>
+    <li class="submenu"> <a href="#"><i class="icon icon-edit"></i> <span>Concept</span> <span class="label label-important">2</span></a>
       <ul>
         <li><a href="">List concept</a></li>
         <li><a href="">Add new</a></li>
       </ul>
     </li>
 
-    <li><a href=""><i class="icon icon-tint"></i> <span>Edit profile</span></a></li>
+    <li><a href=""><i class="icon icon-user"></i> <span>Edit profile</span></a></li>
 
-    <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Upload images</span> <span class="label label-important">2</span></a>
+    <li class="submenu"> <a href="#"><i class="icon icon-picture"></i> <span>Upload images</span> <span class="label label-important">2</span></a>
       <ul>
         <li><a href="">List Images</a></li>
         <li><a href="">Upload new</a></li>
       </ul>
     </li>
 
-    <li><a href="#"><i class="icon icon-home"></i> <span>Contact to webmaster</span></a> </li>
+    <li><a href="#"><i class="icon icon-envelope"></i> <span>Contact to webmaster</span></a> </li>
   </ul>
 </div>
 <!--sidebar-menu-->
@@ -108,6 +108,7 @@
   <div id="content-header">
     <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
     <h1>@yield('page-title')</h1>
+    <a href="@yield('addlink')" class="@yield('isHidden') btn btn-large btn-info"><i class="icon-plus"></i> Add new</a>
   </div>
 <!--End-breadcrumbs-->
   <div class="container-fluid">
@@ -117,7 +118,7 @@
 <!--Footer-part-->
 
 <div class="row-fluid">
-  <div id="footer" class="span12"> 2017 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in">Themedesigner.in</a> </div>
+  <div id="footer" class="span12"> 2017 &copy; Kon Admin. Develope by <a href="http://facebook.com/ziczacsolutions">Ziczac Solutions</a> </div>
 </div>
 
 <!--end-Footer-part-->

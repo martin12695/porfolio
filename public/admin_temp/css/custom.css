@@ -97,3 +97,16 @@ label.error{
 #header h1{
 	background-image: url('../../images/adminlogo.png');
 }
+
+#content-header h1{
+	text-transform: uppercase;
+	display: inline-block;
+}
+
+#content-header a.btn{
+	margin-left: 20px;
+	margin-top: 16px;
+	display: inline-block;
+	margin-right: 20px;
+	float: right;
+}
