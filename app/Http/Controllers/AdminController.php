@@ -11,6 +11,7 @@ use DB;
 use Symfony\Component\HttpFoundation\Request;
 use Carbon;
 use Illuminate\Support\Facades\Validator;
+use File;
 
 class AdminController extends Controller
 {
@@ -61,6 +62,41 @@ class AdminController extends Controller
             ]
         );
        return back()->with('response', 1);
+
+    }
+
+    public function saveIdProject(Request $request, $id) {
+        $data = $request->input();
+        if ( $request->hasFile('image') ){
+            $image = $request->file('image');
+            $validator = Validator::make(
+                array('file' => $image),
+                array('file' => 'required|mimes:jpeg,png|image|max:2048')
+            );
+            if ($validator->passes()) {
+                $oldImage =  DB::table('overview')->where('id', $id)->select('link_image')->first();
+                $oldImage = $oldImage->link_image;
+                File::delete('images/thum/' . $oldImage);
+                $nameImage = time() . $image->getClientOriginalName();
+                $image->move('images/thum/', $nameImage);
+                DB::table('overview')
+                    ->where('id', $id)
+                    ->update(['link_image' => $nameImage]
+                    );
+
+            }else {
+                return back()->with('response', 2);
+            }
+        }
+        DB::table('overview')
+            ->where('id', $id)
+            ->update(
+            [   'title' => $data['title'],
+                'content' => $data['content'],
+                'short_des' => $data['short_des'],
+            ]
+        );
+        return back()->with('response', 1);
 
     }
 

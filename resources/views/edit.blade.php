@@ -4,12 +4,23 @@
 @section('content')
 	<div class="row-fluid">
       <div class="span12">
+          @if(Session::get('response') && Session::get('response')==1)
+          <div class="alert alert-success alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
+              <h4 class="alert-heading"><i class="icon-ok"></i> Edit project successfully!</h4>
+          </div>
+          @endif
+          @if(Session::get('response') && Session::get('response')==2)
+          <div class="alert alert-error alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
+              <h4 class="alert-heading"><i class="icon-remove-sign"></i> Error!</h4>
+              <span >Please upload image type .jpg, .png and not exceed 2mb  !</span>
+          </div>
+          @endif
         <div class="widget-box">
         <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
           <h5>Edit project</h5>
         </div>
         <div class="widget-content nopadding">
-          <form action="/dashboard/project/save" method="POST" class="form-horizontal">
+          <form action="/dashboard/project/save/{{$info->id}}" method="POST" class="form-horizontal" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="control-group">
               <label class="control-label">Title :</label>
@@ -33,8 +44,8 @@
               <label class="control-label">Thumbnail :</label>
               <div class="controls">
                 <label id="fileUpload" for="Thumbnail">Browser</label>
-                <input type="file" id="Thumbnail">
-                <div id="imagePreview" style="background-image: url('https://www.w3schools.com/css/trolltunga.jpg');">
+                <input type="file" id="Thumbnail" onchange="readURL(this)" name="image">
+                <div id="imagePreview" style="background-image: url('{{url('/images/thum/'.$info->link_image)}}');">
                     <span id="btnRemove" data-value="">
                         <i class="icon-remove-sign"></i>
                     </span>
@@ -79,20 +90,26 @@
         }
       </style>
       <script>
-        var AJAX_PATH = './dashboard/project/edit/delete';
         $('#btnRemove').click(function(){
           var prjID = $('#btnRemove').attr('data-value');
-          $.post(AJAX_PATH+prjID,
-            {
-              //data
-            },
-            function(data){
-              //if success
-              $('#fileUpload').show();
-              $('#imagePreview').hide();
-            }
-          );
+            $('#fileUpload').show();
+            $('#imagePreview').hide();
         });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imagePreview').css('background-image', 'url('+e.target.result+')');
+                    $('#imagePreview').show();
+                    $('#fileUpload').hide();
+
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
       </script>
     </div>
 @endsection
