@@ -55,7 +55,12 @@
   <ul class="nav">
     <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome User</span><b class="caret"></b></a>
       <ul class="dropdown-menu">
-        <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+        <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><i class="icon-key"></i> Log Out</a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+          </form>
+        </li>
       </ul>
     </li>
     <li class=""><a target="_blank" ="" href="/"><i class="icon icon-share-alt"></i> <span class="text">Xem trang</span></a></li>

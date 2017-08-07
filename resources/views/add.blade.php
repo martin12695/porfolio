@@ -15,7 +15,7 @@
             @if(Session::get('response') && Session::get('response')==2)
             <div class="alert alert-error alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
                   <h4 class="alert-heading"><i class="icon-remove-sign"></i> Error!</h4>
-                  <span >Oop! Somethings happened!</span>
+                  <span >Please upload image type .jpg, .png and not exceed 2mb  !</span>
             </div>
             @endif
             <div id="errorBox" style="display: none;" class="alert alert-error alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>

@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 use DB;
 use Symfony\Component\HttpFoundation\Request;
 use Carbon;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
@@ -23,7 +24,7 @@ class AdminController extends Controller
     }
 
     public function getProject() {
-        $info = DB::table('overview')->select('id','title','short_des','link_image')->paginate(5);
+        $info = DB::table('overview')->select('id','title','short_des','link_image')->orderBy('id', 'desc')->paginate(5);
         return view ('project', [
             'info' => $info,
             'page' => 'project'
@@ -35,12 +36,20 @@ class AdminController extends Controller
     }
 
     public function saveProject(Request $request) {
-        $nameImage = '';
+        $nameImage = 'noimage.jpg';
         $data = $request->input();
         if ( $request->hasFile('image') ){
             $image = $request->file('image');
-            $nameImage = time().$image->getClientOriginalName();
-            $image->move('images/thum/',$nameImage);
+            $validator = Validator::make(
+                array('file' => $image),
+                array('file' => 'required|mimes:jpeg,png|image|max:2048')
+            );
+            if ($validator->passes()) {
+                $nameImage = time() . $image->getClientOriginalName();
+                $image->move('images/thum/', $nameImage);
+            }else {
+                return back()->with('response', 2);
+            }
         }
         $mytime = Carbon\Carbon::now();
         DB::table('overview')->insert(

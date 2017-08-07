@@ -24,9 +24,6 @@ Route::group(['prefix' => 'dashboard'], function () {
 });
 
 
-Route::get('/dashboard/project/add', function () {
-    return view('add');
-});
 
 Auth::routes();
 
