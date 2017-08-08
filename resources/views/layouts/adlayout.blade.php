@@ -81,9 +81,9 @@
       </ul>
     </li>
 
-    <li class="submenu"> <a href="#"><i class="icon icon-edit"></i> <span>Concept</span> <span class="label label-important">2</span></a>
+    <li class="submenu"> <a href="#"><i class="icon icon-edit"></i> <span>Sketch</span> <span class="label label-important">2</span></a>
       <ul>
-        <li><a href="">List concept</a></li>
+        <li><a href="">List Sketch</a></li>
         <li><a href="">Add new</a></li>
       </ul>
     </li>

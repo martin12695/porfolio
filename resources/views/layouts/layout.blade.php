@@ -42,8 +42,8 @@
 					<div class="col-md-8 navbar">
 						<ul>
 							<li><a href="#">Project</a></li>
-							<li><a href="#">Concept</a></li>
-							<li><a href="#">Profile</a></li>
+							<li><a href="#">Sketch</a></li>
+							<li><a href="./profile">Profile</a></li>
 							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
 						</ul>
