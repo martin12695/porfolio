@@ -314,7 +314,11 @@ body{
 		margin-top: 100px;
 	}
 	#content .project .prv{
-		height: 420px;
+		height: 150px;
+	}
+
+	#content .col-sm-4{
+		padding-right: 0;
 	}
 
 	#header .xs-nav a {
@@ -327,19 +331,19 @@ body{
 	}
 
 	#content .project {
-		margin-top: 30px;
+		margin-top: 15px;
 	}
 
 	#content .info{
-		padding-top: 150px;
+		padding-top: 0px;
 	}
 
 	#content .info > a > h1 {
-		font-size: 22px;
+		font-size: 14px;
 	}
 
 	#content .info > a > p {
-		font-size: 16px;
+		font-size: 12px;
 	}
 
 	#menu_content ul li{
