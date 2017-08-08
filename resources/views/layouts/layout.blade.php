@@ -33,13 +33,27 @@
 		<div id="loading">
 			<div id="LoadingGif">&nbsp;</div>
 		</div>
+		<div id="menu" style="display: none;">
+			<div id="menu_content">
+				<div class="close-menu" id="closeMenuBtn">
+					<i class="fa fa-remove"></i>
+				</div>
+				<ul>
+					<li><a href="#">Project</a></li>
+					<li><a href="#">Sketch</a></li>
+					<li><a href="./profile">Profile</a></li>
+					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+				</ul>
+			</div>
+		</div>
 		<section id="header">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-xs-8 col-md-4">
 						<div class="logo"><a href="/">&nbsp;</a></div>
 					</div>
-					<div class="col-md-8 navbar">
+					<div class="col-md-8 navbar hidden-xs hidden-sm">
 						<ul>
 							<li><a href="#">Project</a></li>
 							<li><a href="#">Sketch</a></li>
@@ -47,6 +61,11 @@
 							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
 						</ul>
+					</div>
+					<div class="col-xs-4 visible-xs visible-sm xs-nav">
+						<a href="javascript:void(0)" id="navBtn" >
+							<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+						</a>
 					</div>
 				</div>
 			</div>

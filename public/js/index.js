@@ -8,4 +8,20 @@ $(document).ready(function(){
 			$this.text($this.text().substr(0, maxChars)+' ...');
 		}
 	});
+
+	$('#navBtn').click(function(){
+		showMenu();
+	});
+
+	$('#closeMenuBtn').click(function(){
+		hideMenu();
+	});
 });
+
+function showMenu(){
+	$('#menu').fadeIn();
+}
+
+function hideMenu(){
+	$('#menu').fadeOut();
+}
