@@ -15,6 +15,7 @@ use File;
 
 class AdminController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -56,6 +57,9 @@ class AdminController extends Controller
             return back()->with('response', 2);
         }
     }
+    $slug = $data['title'];
+    $slug = parent::noDiacritics($slug);
+    dd($slug);
     $mytime = Carbon\Carbon::now();
     DB::table('overview')->insert(
         [   'title' => $data['title'],
