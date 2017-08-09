@@ -3,7 +3,7 @@
 @section('customJs', 'index.js')
 @section('content')
 	@foreach($info as $item)
-	<div class="col-md-3">
+	<div class="col-sm-4 col-md-3 col-xs-12">
 		<div class="project">
 			<a href="#">
 				
