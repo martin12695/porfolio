@@ -79,12 +79,19 @@
 
 		<section id="footer">
 			<div class="container">
-				<h3>copyright © 2017 | @yield('Author')</h3>
+				<h3>copyright © 2017 | Kon studio</h3>
 			</div>
 		</section>
 
 		<div id="backtotop">
 			<div class="up-arrow">&nbsp;</div>
+		</div>
+
+		<div id="imgDetail">
+			<div class="closeImgDetail" id="imgDetailClose">
+				<i class="fa fa-remove"></i>
+			</div>
+			<img src="">
 		</div>
 
 		<script>

@@ -1,6 +1,7 @@
 @extends('layouts/layout')
 @section('page-title', 'Sketch')
 @section('customCss', './css/sketch.css')
+@section('customJs', 'index.js')
 
 @section('content')
 	<div class="row">
