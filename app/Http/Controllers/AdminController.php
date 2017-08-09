@@ -36,7 +36,40 @@ class AdminController extends Controller
         return view ('add');
     }
 
+    public function addSketch() {
+        return view ('add_sketch');
+    }
+
     public function saveProject(Request $request) {
+    $nameImage = 'noimage.jpg';
+    $data = $request->input();
+    if ( $request->hasFile('image') ){
+        $image = $request->file('image');
+        $validator = Validator::make(
+            array('file' => $image),
+            array('file' => 'required|mimes:jpeg,png|image|max:2048')
+        );
+        if ($validator->passes()) {
+            $nameImage = time() . $image->getClientOriginalName();
+            $image->move('images/thum/', $nameImage);
+        }else {
+            return back()->with('response', 2);
+        }
+    }
+    $mytime = Carbon\Carbon::now();
+    DB::table('overview')->insert(
+        [   'title' => $data['title'],
+            'content' => $data['content'],
+            'short_des' => $data['short_des'],
+            'created'   => $mytime->toDateTimeString(),
+            'link_image' => $nameImage
+        ]
+    );
+    return back()->with('response', 1);
+
+}
+
+    public function saveSketch(Request $request) {
         $nameImage = 'noimage.jpg';
         $data = $request->input();
         if ( $request->hasFile('image') ){
@@ -53,15 +86,15 @@ class AdminController extends Controller
             }
         }
         $mytime = Carbon\Carbon::now();
-        DB::table('overview')->insert(
+        DB::table('sketch')->insert(
             [   'title' => $data['title'],
                 'content' => $data['content'],
                 'short_des' => $data['short_des'],
                 'created'   => $mytime->toDateTimeString(),
-                'link_image' => $nameImage
+                'image' => $nameImage
             ]
         );
-       return back()->with('response', 1);
+        return back()->with('response', 1);
 
     }
 
