@@ -5,12 +5,12 @@
 	@foreach($info as $item)
 	<div class="col-sm-4 col-md-3 col-xs-12">
 		<div class="project">
-			<a href="#">
+			<a href="{{url('/project/'.$item->slug)}}">
 				
 				<div class="prv" style="background-image: url('./images/thum/{{$item->link_image}}');">&nbsp;</div>
 			</a>
 			<div class="info">
-				<a href="#">
+				<a href="{{url('/project/'.$item->slug)}}">
 					<h1 class="title">
 						{{$item->title}}
 						<hr>

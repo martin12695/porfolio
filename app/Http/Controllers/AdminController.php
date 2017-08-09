@@ -66,15 +66,21 @@ class AdminController extends Controller
         }
     }
     $slug = $data['title'];
-    $slug = parent::noDiacritics($slug);
-    dd($slug);
+    $slug = parent::convert_vi_to_en($slug);
+    $count = DB::table('overview')
+        ->where('slug', 'like', '%'.$slug.'%')
+        ->count();
+    if($count > 0) {
+        $slug . '-' . $count ;
+    }
     $mytime = Carbon\Carbon::now();
     DB::table('overview')->insert(
         [   'title' => $data['title'],
             'content' => $data['content'],
             'short_des' => $data['short_des'],
             'created'   => $mytime->toDateTimeString(),
-            'link_image' => $nameImage
+            'link_image' => $nameImage,
+            'slug'  => $slug
         ]
     );
     return back()->with('response', 1);

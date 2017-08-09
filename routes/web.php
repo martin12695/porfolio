@@ -35,3 +35,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'HomeController@profile');
 Route::get('/sketch', 'HomeController@sketch');
+Route::get('/project/{slug}', 'HomeController@getDetail');

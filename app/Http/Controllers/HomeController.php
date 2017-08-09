@@ -37,4 +37,11 @@ class HomeController extends Controller
             ['info' =>  $info ]);
     }
 
+    public function getDetail($slug)
+    {
+        $info =  DB::table('overview')->where('slug',$slug)->first();
+        return view('profile',
+            ['info' =>  $info ]);
+    }
+
 }

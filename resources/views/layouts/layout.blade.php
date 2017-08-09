@@ -7,17 +7,17 @@
 		<title>KON | @yield('page-title')</title>
 
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="./css/bootstrap.min.css">
-		<link rel="stylesheet" href="./css/style.css">
-		<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="@yield('customCss')">
 
 
 		<!-- jQuery -->
-		<script src="./js/jquery-3.2.1.min.js"></script>
+		<script src="/js/jquery-3.2.1.min.js"></script>
 		<!-- Bootstrap JavaScript -->
-		<script src="./js/bootstrap.min.js"></script>
-		<script src="./js/libs.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/libs.js"></script>
 
 		<script src="./js/@yield('customJs')"></script>
 		
