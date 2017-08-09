@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="./css/bootstrap.min.css">
 		<link rel="stylesheet" href="./css/style.css">
 		<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
-		@yield('style.css')
+		<link rel="stylesheet" type="text/css" href="@yield('customCss')">
 
 
 		<!-- jQuery -->
@@ -39,8 +39,8 @@
 					<i class="fa fa-remove"></i>
 				</div>
 				<ul>
-					<li><a href="#">Project</a></li>
-					<li><a href="#">Sketch</a></li>
+					<li><a href="/">Project</a></li>
+					<li><a href="./sketch">Sketch</a></li>
 					<li><a href="./profile">Profile</a></li>
 					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
@@ -55,8 +55,8 @@
 					</div>
 					<div class="col-md-8 navbar hidden-xs hidden-sm">
 						<ul>
-							<li><a href="#">Project</a></li>
-							<li><a href="#">Sketch</a></li>
+							<li><a href="/">Project</a></li>
+							<li><a href="./sketch">Sketch</a></li>
 							<li><a href="./profile">Profile</a></li>
 							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
@@ -82,6 +82,10 @@
 				<h3>copyright © 2017 | @yield('Author')</h3>
 			</div>
 		</section>
+
+		<div id="backtotop">
+			<div class="up-arrow">&nbsp;</div>
+		</div>
 
 		<script>
 			window.onload = function(){

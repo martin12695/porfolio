@@ -53,7 +53,7 @@
 <!--top-Header-menu-->
 <div id="user-nav" class="navbar navbar-inverse">
   <ul class="nav">
-    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome User</span><b class="caret"></b></a>
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome {{ Auth::user()->name }}</span><b class="caret"></b></a>
       <ul class="dropdown-menu">
         <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="icon-key"></i> Log Out</a>
@@ -81,7 +81,7 @@
       </ul>
     </li>
 
-    <li class="submenu"> <a href="#"><i class="icon icon-edit"></i> <span>Sketch</span> <span class="label label-important">2</span></a>
+    <li class="submenu @yield('activeSidebarSketch')"> <a href="#"><i class="icon icon-edit"></i> <span>Sketch</span> <span class="label label-important">2</span></a>
       <ul>
         <li><a href="">List Sketch</a></li>
         <li><a href="">Add new</a></li>

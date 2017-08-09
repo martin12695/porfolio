@@ -26,6 +26,10 @@ class HomeController extends Controller
         return view('profile');
     }
 
+    public function sketch(){
+        return view('sketch_home');
+    }
+
     public function index()
     {
         $info =  DB::table('overview')->orderby('id','des')->get();

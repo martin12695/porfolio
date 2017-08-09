@@ -22,7 +22,7 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::post('/project/save/{id}', 'AdminController@saveIdProject');
     Route::get('/project/edit/{id}', 'AdminController@editProject')->where(['id' => '[0-9]+']);
     Route::get('/project/delete/{id}', 'AdminController@deleteProject')->where(['id' => '[0-9]+']);
-    Route::get('/sketch', 'AdminController@getProject');
+    Route::get('/sketch', 'AdminController@getSketch');
     Route::get('/sketch/add', 'AdminController@addSketch');
     Route::post('/sketch/save', 'AdminController@saveSketch');
 
@@ -34,3 +34,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'HomeController@profile');
+Route::get('/sketch', 'HomeController@sketch');
