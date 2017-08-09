@@ -36,6 +36,14 @@ class AdminController extends Controller
         return view ('add');
     }
 
+    public function getSketch(){
+        $info = DB::table('overview')->select('id','title','short_des','link_image')->orderBy('id', 'desc')->paginate(5);
+        return view ('sketch', [
+            'info' => $info,
+            'page' => 'project'
+        ]);
+    }
+
     public function addSketch() {
         return view ('add_sketch');
     }
