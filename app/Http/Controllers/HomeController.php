@@ -27,7 +27,9 @@ class HomeController extends Controller
     }
 
     public function sketch(){
-        return view('sketch_home');
+        $info =  DB::table('sketch')->orderby('id','des')->get();
+        return view('sketch_home',
+            ['info' =>  $info ]);
     }
 
     public function index()

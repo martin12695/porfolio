@@ -83,8 +83,8 @@
 
     <li class="submenu @yield('activeSidebarSketch')"> <a href="#"><i class="icon icon-edit"></i> <span>Sketch</span> <span class="label label-important">2</span></a>
       <ul>
-        <li><a href="">List Sketch</a></li>
-        <li><a href="">Add new</a></li>
+        <li><a href="{{url('/dashboard/sketch')}}">List Sketch</a></li>
+        <li><a href="{{url('/dashboard/sketch/add')}}">Add new</a></li>
       </ul>
     </li>
 

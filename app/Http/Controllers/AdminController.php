@@ -103,13 +103,22 @@ class AdminController extends Controller
                 return back()->with('response', 2);
             }
         }
+        $slug = $data['title'];
+        $slug = parent::convert_vi_to_en($slug);
+        $count = DB::table('sketch')
+            ->where('slug', 'like', '%'.$slug.'%')
+            ->count();
+        if($count > 0) {
+            $slug . '-' . $count ;
+        }
         $mytime = Carbon\Carbon::now();
         DB::table('sketch')->insert(
             [   'title' => $data['title'],
                 'content' => $data['content'],
                 'short_des' => $data['short_des'],
                 'created'   => $mytime->toDateTimeString(),
-                'image' => $nameImage
+                'image' => $nameImage,
+                'slug'  => $slug
             ]
         );
         return back()->with('response', 1);
