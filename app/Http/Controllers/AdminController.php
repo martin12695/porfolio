@@ -38,7 +38,7 @@ class AdminController extends Controller
     }
 
     public function getSketch(){
-        $info = DB::table('overview')->select('id','title','short_des','link_image')->orderBy('id', 'desc')->paginate(5);
+        $info = DB::table('sketch')->select('id','title','short_des','image')->orderBy('id', 'desc')->paginate(5);
         return view ('sketch', [
             'info' => $info,
             'page' => 'project'

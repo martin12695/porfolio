@@ -57,7 +57,7 @@
 						<ul>
 							<li><a href="/">Project</a></li>
 							<li><a href="./sketch">Sketch</a></li>
-							<li><a href="./profile">Profile</a></li>
+							<li><a href="">Profile</a></li>
 							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
 						</ul>
