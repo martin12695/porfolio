@@ -2,6 +2,13 @@
 @section('page-title', 'Home')
 @section('customJs', 'index.js')
 @section('content')
+	<div id="Filter"> 
+		<select>
+			<option>Filter</option>
+			<option>Completed</option>
+			<option>In progress</option>
+		</select>
+	</div>
 	@foreach($info as $item)
 	<div class="col-sm-4 col-md-3 col-xs-12">
 		<div class="project">

@@ -96,6 +96,12 @@
 
 		<script>
 			window.onload = function(){
+				$('#content .project .prv').each(function(){
+					var $this = $(this);
+					var width = $this.width();
+					var height = width/1.42549397;
+					$this.css('height', height);
+				});
 				$('#loading').fadeOut();
 			};
 		</script>
