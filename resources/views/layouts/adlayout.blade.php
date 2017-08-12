@@ -12,7 +12,6 @@
 <link href="{{url('/admin_temp/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
 <link rel="stylesheet" href="{{url('/admin_temp/css/jquery.gritter.css')}}" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{url('/admin_temp/css/bootstrap-wysihtml5.css')}}" />
 <link rel="stylesheet" href="{{url('/admin_temp/css/custom.css')}}" />
 
 <script src="{{url('/admin_temp/js/jquery.min.js')}}"></script>
@@ -36,10 +35,9 @@
 <script src="{{url('/admin_temp/js/select2.min.js')}}"></script> 
 <script src="{{url('/admin_temp/js/matrix.popover.js')}}"></script> 
 <script src="{{url('/admin_temp/js/jquery.dataTables.min.js')}}"></script> 
-<script src="{{url('/admin_temp/js/matrix.tables.js')}}"></script> 
-<script src="{{url('/admin_temp/js/wysihtml5-0.3.0.js')}}"></script> 
+<script src="{{url('/admin_temp/js/matrix.tables.js')}}"></script>
 <script src="{{url('/admin_temp/js/jquery.peity.min.js')}}"></script> 
-<script src="{{url('/admin_temp/js/bootstrap-wysihtml5.js')}}"></script> 
+
 </head>
 <body>
 

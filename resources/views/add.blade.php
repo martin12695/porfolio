@@ -44,8 +44,8 @@
                         </div>
                         <div class="control-group">
                             <label class="control-label">Content :</label>
-                            <div class="controls">
-                                <textarea class="span11 textarea_editor" rows="12" name="content" id="Content" resize="true"></textarea>
+                            <div class="controls" style="position: relative">
+                                <textarea class="textarea_editor content ckeditor" rows="12" name="content" resize="true"></textarea>
                             </div>
                         </div>
                         <div class="control-group">
@@ -92,6 +92,8 @@
                 display: none;
             }
         </style>
+        <script language="javascript" src="/js/ckeditor/ckeditor.js" type="text/javascript"></script>
+        <script language="javascript" src="/js/ckeditor/config.js" type="text/javascript"></script>
         <script>
             $('#btnSubmit').click(function(e){
                 var $form = $('#formAction');
@@ -129,6 +131,7 @@
                 $('#imagePreview').hide();
                 $('#fileUpload').show();
             });
+
         </script>
     </div>
 @endsection
