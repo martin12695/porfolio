@@ -42,7 +42,7 @@ class HomeController extends Controller
     public function getDetail($slug)
     {
         $info =  DB::table('overview')->where('slug',$slug)->first();
-        return view('profile',
+        return view('project_detail',
             ['info' =>  $info ]);
     }
 

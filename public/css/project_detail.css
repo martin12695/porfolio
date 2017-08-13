@@ -1,0 +1,19 @@
+.icon-title{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background-image: url('../icon/star-icon.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	margin-top: 9px;
+	margin-left: -9px;
+}
+
+.prj-head > .title > h3{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 15px;
+	text-transform: uppercase;
+}
