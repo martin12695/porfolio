@@ -80,7 +80,12 @@ class AdminController extends Controller
             'short_des' => $data['short_des'],
             'created'   => $mytime->toDateTimeString(),
             'link_image' => $nameImage,
-            'slug'  => $slug
+            'slug'  => $slug,
+            'square' => $data['square'],
+            'owner'  => $data['owner'],
+            'year'   => $data['year'],
+            'status' => $data['status'],
+            'address'=> $data['address']
         ]
     );
     return back()->with('response', 1);
@@ -136,7 +141,9 @@ class AdminController extends Controller
             if ($validator->passes()) {
                 $oldImage =  DB::table('overview')->where('id', $id)->select('link_image')->first();
                 $oldImage = $oldImage->link_image;
-                File::delete('images/thum/' . $oldImage);
+                if ($oldImage != 'noimage.jpg') {
+                    File::delete('images/thum/' . $oldImage);
+                }
                 $nameImage = time() . $image->getClientOriginalName();
                 $image->move('images/thum/', $nameImage);
                 DB::table('overview')
@@ -154,6 +161,11 @@ class AdminController extends Controller
             [   'title' => $data['title'],
                 'content' => $data['content'],
                 'short_des' => $data['short_des'],
+                'square' => $data['square'],
+                'owner'  => $data['owner'],
+                'year'   => $data['year'],
+                'status' => $data['status'],
+                'address'=> $data['address']
             ]
         );
         return back()->with('response', 1);

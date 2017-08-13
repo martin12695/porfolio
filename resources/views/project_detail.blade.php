@@ -12,28 +12,32 @@
 			<table>
 				<tr>
 					<td width="200">ĐỊA ĐIỂM:</td>
-					<td>111/12/2 ShiomKu.Tokyo</td>
+					<td>{{$info->address}}</td>
 				</tr>
 				<tr>
 					<td>Diện tích:</td>
-					<td>123m2</td>
+					<td>{{$info->square}}</td>
 				</tr>
 				<tr>
 					<td>Năm hoàn thành:</td>
-					<td>2017</td>
+					<td>{{$info->year}}</td>
 				</tr>
 				<tr>
 					<td>Chủ đầu tư:</td>
-					<td>LCD Group</td>
+					<td>{{$info->owner}}</td>
 				</tr>
 				<tr>
 					<td>Trạng thái:</td>
+					@if ( $info->status == 0)
 					<td>Đang triển khai</td>
+					@else
+					<td>Đã hoàn thành</td>
+					@endif
 				</tr>
 			</table>
 		</div>
 		<div class="prj-cover">
-			<img src="{{url('./images/thum/'.$info->link_image)}}">
+			<img src="{{url('/images/thum/'.$info->link_image)}}">
 		</div>
 	</div>
 	<div class="prj-content">
