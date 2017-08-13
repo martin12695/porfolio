@@ -5,8 +5,8 @@
 @section('content')
 	<div class="prj-head">
 		<div class="title">
-			<span class="icon-title">&nbsp;</span>
-			<h3>Project title - project title Name</h3>
+			
+			<h3><span class="icon-title">&nbsp;</span> Project title - project title Name</h3>
 		</div>
 		<div class="short-desc">
 			<table>
@@ -40,6 +40,63 @@
 		<article>
 			{!!$info->content !!}
 		</article>
+	</div>
+	<div class="prj-navigation">
+		<div class="row">
+			<div class="col-xs-6">
+				<a href="#">Back to PROJECTS</a>
+			</div>
+			<div class="col-xs-6" style="text-align: right;">
+				<a href="#">Prev</a>/<a href="#">Next</a>
+			</div>
+		</div>
+	</div>
+	<div class="prj-recommended">
+		<div class="row">
+			<div class="col-xs-12 col-sm-4 prj-rcm-block">
+				<a class="prj-link" href="#"></a>
+				<div class="prj-rcm-thumb" style="background-image: url('../images/thum/15023852348b66cbdb-804e-4120-9507-6fae34b7690b_rwc_0x-29x1885x1259x1885.jpg');">
+					<div class="prj-rcm-hover"></div>
+				</div>
+				<a class="prj-rcm-title" href="#">Project title</a>
+			</div>
+			<div class="col-xs-12 col-sm-4 prj-rcm-block">
+				<a class="prj-link" href="#"></a>
+				<div class="prj-rcm-thumb" style="background-image: url('../images/thum/15023852348b66cbdb-804e-4120-9507-6fae34b7690b_rwc_0x-29x1885x1259x1885.jpg');">
+					<div class="prj-rcm-hover"></div>
+				</div>
+				<a class="prj-rcm-title" href="#">Project title</a>
+			</div>
+			<div class="col-xs-12 col-sm-4 prj-rcm-block">
+				<a class="prj-link" href="#"></a>
+				<div class="prj-rcm-thumb" style="background-image: url('../images/thum/15023852348b66cbdb-804e-4120-9507-6fae34b7690b_rwc_0x-29x1885x1259x1885.jpg');">
+					<div class="prj-rcm-hover"></div>
+				</div>
+				<a class="prj-rcm-title" href="#">Project title</a>
+			</div>
+			<div class="col-xs-12 col-sm-4 prj-rcm-block">
+				<a class="prj-link" href="#"></a>
+				<div class="prj-rcm-thumb" style="background-image: url('../images/thum/15023852348b66cbdb-804e-4120-9507-6fae34b7690b_rwc_0x-29x1885x1259x1885.jpg');">
+					<div class="prj-rcm-hover"></div>
+				</div>
+				<a class="prj-rcm-title" href="#">Project title</a>
+			</div>
+			<div class="col-xs-12 col-sm-4 prj-rcm-block">
+				<a class="prj-link" href="#"></a>
+				<div class="prj-rcm-thumb" style="background-image: url('../images/thum/15023852348b66cbdb-804e-4120-9507-6fae34b7690b_rwc_0x-29x1885x1259x1885.jpg');">
+					<div class="prj-rcm-hover"></div>
+				</div>
+				<a class="prj-rcm-title" href="#">Project title</a>
+			</div>
+			<div class="col-xs-12 col-sm-4 prj-rcm-block">
+				<a class="prj-link" href="#"></a>
+				<div class="prj-rcm-thumb" style="background-image: url('../images/thum/15023852348b66cbdb-804e-4120-9507-6fae34b7690b_rwc_0x-29x1885x1259x1885.jpg');">
+					<div class="prj-rcm-hover"></div>
+				</div>
+				<a class="prj-rcm-title" href="#">Project title</a>
+			</div>
+			
+		</div>
 	</div>
 	<!-- <article>
 		<h3 class="center" style="text-transform: uppercase;">{{$info->title}}</h3>

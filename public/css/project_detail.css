@@ -7,8 +7,12 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	vertical-align: middle;
-	margin-top: 9px;
+	margin-top: -5px;
 	margin-left: -9px;
+}
+
+.row{
+	margin: 0;
 }
 
 .prj-head > .title > h3{
@@ -28,4 +32,101 @@
 .prj-head > .prj-cover > img{
 	width: 100%;
 	margin-bottom: 40px;
+}
+
+.prj-navigation{
+	margin-top: 160px;
+	margin-bottom: 100px;
+}
+
+.prj-navigation a{
+	text-decoration: none;
+	color: #333;
+}
+
+.prj-navigation a:hover,
+.prj-navigation a:focus{
+	text-decoration: underline;
+	color: #e71717;
+}
+
+.prj-recommended .prj-rcm-thumb{
+	display: block;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.prj-recommended{
+	text-align: center;
+}
+
+.prj-recommended .prj-rcm-block{
+	position: relative;
+	margin-bottom: 45px;
+}
+
+.prj-recommended a.prj-link{
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.prj-recommended a.prj-rcm-title{
+	text-decoration: none;
+	font-size: 16px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #333;
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+	font-weight: bold;
+}
+
+.prj-recommended .prj-rcm-block:hover .prj-rcm-title,
+.prj-recommended .prj-rcm-block:focus .prj-rcm-title{
+	color: #e71717;
+}
+
+.prj-rcm-hover{
+	display: none;
+	height: 100%;
+	width: 100%;
+	-webkit-animation: fadein 0.75s; 
+       -moz-animation: fadein 0.75s; 
+       	-ms-animation: fadein 0.75s; 
+         -o-animation: fadein 0.75s;
+            animation: fadein 0.75s;
+}
+
+.prj-recommended .prj-rcm-block:hover .prj-rcm-hover,
+.prj-recommended .prj-rcm-block:focus .prj-rcm-hover{
+	display: block;
+	background-color: rgba(231,23,23,0.8);
+}
+
+
+article{
+	padding-left: 15px;
+	padding-right: 15px;
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+#header .container{ 
+	padding-right: 0;
+}
+
+
+@media screen and (min-width: 768px){
+	.prj-recommended .col-sm-4{
+		padding: 0 15px !important;
+	}
+
+	#header .container .row{
+		margin-left: -15px;
+		margin-right: -15px;
+	}
 }

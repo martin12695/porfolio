@@ -2,6 +2,15 @@ var scrollPos = 0;
 
 window.onscroll = backToTop;
 
+$(window).resize(function(){
+	$('.prj-recommended .prj-rcm-thumb').each(function(){
+		var $this = $(this);
+		var width = $this.width();
+		var height = width;
+		$this.css('height', height);
+	});
+});
+
 $(document).ready(function(){
 	// $(this).bind("contextmenu", function(e) {
  //        e.preventDefault();

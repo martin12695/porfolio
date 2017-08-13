@@ -19,7 +19,7 @@
 		<script src="/js/bootstrap.min.js"></script>
 		<script src="/js/libs.js"></script>
 
-		<script src="./js/@yield('customJs')"></script>
+		<script src="/js/@yield('customJs')"></script>
 		
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -100,6 +100,12 @@
 					var $this = $(this);
 					var width = $this.width();
 					var height = width/1.42549397;
+					$this.css('height', height);
+				});
+				$('.prj-recommended .prj-rcm-thumb').each(function(){
+					var $this = $(this);
+					var width = $this.width();
+					var height = width;
 					$this.css('height', height);
 				});
 				$('#loading').fadeOut();
