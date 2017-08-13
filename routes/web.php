@@ -33,6 +33,8 @@ Route::group(['prefix' => 'dashboard'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/filter/project/{type}', 'HomeController@filter');
+Route::get('/getmore/project/{page}', 'HomeController@getMoreProject')->where(['page' => '[0-9]+']);
 Route::get('/profile', 'HomeController@profile');
 Route::get('/sketch', 'HomeController@sketch');
 Route::get('/project/{slug}', 'HomeController@getDetail');
