@@ -80,7 +80,12 @@ class AdminController extends Controller
             'short_des' => $data['short_des'],
             'created'   => $mytime->toDateTimeString(),
             'link_image' => $nameImage,
-            'slug'  => $slug
+            'slug'  => $slug,
+            'square' => $data['square'],
+            'owner'  => $data['owner'],
+            'year'   => $data['year'],
+            'status' => $data['status'],
+            'address'=> $data['address']
         ]
     );
     return back()->with('response', 1);

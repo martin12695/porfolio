@@ -15,7 +15,7 @@
 			<div class="project">
 				<a href="{{url('/project/'.$item->slug)}}">
 
-					<div class="prv" style="background-image: url('./images/thum/{{$item->link_image}}');">&nbsp;</div>
+					<div class="prv" style="background-image: url('/images/thum/{{$item->link_image}}');">&nbsp;</div>
 				</a>
 				<div class="info">
 					<a href="{{url('/project/'.$item->slug)}}">
@@ -45,13 +45,11 @@
 				if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
 					scroll = false;
 					$.ajax({
-
 						type: "GET",
 						url: '/getmore/project/' + page,
 						success: function (data) {
 							console.log(data);
 							page++;
-							if (data.lenght > 0)  scroll = true;
 							$.each( data, function( i, val ) {
 								$('#info-content').append(`
 								<div class="col-sm-4 col-md-3 col-xs-12">
@@ -71,6 +69,7 @@
 									</div>
 								</div>`);
 							});
+							if (data.lenght > 0)  scroll = true;
 						},
 					});
 				}
