@@ -71,20 +71,9 @@
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
   <ul>
     <li><a href="#"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+    <li><a href="{{url('/dashboard/project')}}"><i class="icon icon-list-ul"></i> <span>Project</span></a> </li>
 
-    <li class="submenu @yield('activeSidebar')"> <a href="#"><i class="icon icon-list-ul"></i> <span>Project</span> <span class="label label-important">2</span></a>
-      <ul>
-        <li><a href="{{url('/dashboard/project')}}">List project</a></li>
-        <li><a href="{{url('/dashboard/project/add')}}">Add new</a></li>
-      </ul>
-    </li>
-
-    <li class="submenu @yield('activeSidebarSketch')"> <a href="#"><i class="icon icon-edit"></i> <span>Sketch</span> <span class="label label-important">2</span></a>
-      <ul>
-        <li><a href="{{url('/dashboard/sketch')}}">List Sketch</a></li>
-        <li><a href="{{url('/dashboard/sketch/add')}}">Add new</a></li>
-      </ul>
-    </li>
+    <li><a href="{{url('/dashboard/sketch')}}"><i class="icon icon-edit"></i> <span>Sketch</span></a></li>
 
     <li><a href=""><i class="icon icon-user"></i> <span>Edit profile</span></a></li>
 
