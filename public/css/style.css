@@ -66,6 +66,11 @@ body{
 	font-size: 14px;
 }
 
+#loadingData{
+	margin-top: 10px;
+	text-align: center;
+}
+
 body img:hover{
 	cursor: zoom-in;
 }
