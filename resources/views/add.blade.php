@@ -43,6 +43,15 @@
                             </div>
                         </div>
                         <div class="control-group">
+                            <label class="control-label">Status :</label>
+                            <div class="controls">
+                                <select name="status">
+                                    <option value="0">Processing</option>
+                                    <option value="1">Done</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
                             <label class="control-label">Content :</label>
                             <div class="controls" style="position: relative">
                                 <textarea class="textarea_editor content ckeditor" rows="12" name="content" resize="true"></textarea>

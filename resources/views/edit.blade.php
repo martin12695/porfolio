@@ -34,6 +34,15 @@
                 <input name="short_des" type="text" class="span11" placeholder="Short description" value="{{$info->short_des}}">
               </div>
             </div>
+              <div class="control-group">
+                  <label class="control-label">Status :</label>
+                  <div class="controls">
+                      <select name="status">
+                          <option value="0" {{$info->status == 0 ?  'selected' : ''}}>Processing</option>
+                          <option value="1" {{$info->status == 1 ?  'selected' : ''}}>Done</option>
+                      </select>
+                  </div>
+              </div>
             <div class="control-group">
               <label class="control-label">Content :</label>
               <div class="controls">
