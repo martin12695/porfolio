@@ -32,6 +32,12 @@
 		</div>
 		@endforeach
 	</div>
+	<div id="loadingData" class="row" style="display: none;">
+		<div class="col-xs-12">
+			<h3>Loading...</h3>
+		</div>
+	</div>
+
 	<script>
 		var page = 1;
 		var scroll = true;
@@ -43,6 +49,7 @@
 		$(window).scroll(function() {
 			if (scroll == true) {
 				if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+					$('#loadingData').fadeIn();
 					scroll = false;
 					$.ajax({
 						type: "GET",
@@ -52,7 +59,7 @@
 							page++;
 							$.each( data, function( i, val ) {
 								$('#info-content').append(`
-								<div class="col-sm-4 col-md-3 col-xs-12">
+								<div class="col-sm-4 col-md-3 col-xs-12 data-append" style="display:none;">
 									<div class="project">
 										<a href="/project/` + val.slug +`">
 											<div class="prv" style="background-image: url('./images/thum/` + val.link_image + `');">&nbsp;</div>
@@ -69,6 +76,13 @@
 									</div>
 								</div>`);
 							});
+							var $data = $('.data-append');
+							$data.each(function(){
+								var $this = $(this);
+								$this.removeClass('data-append');
+								$this.fadeIn();
+							});
+							$('#loadingData').fadeOut();
 							if (data.lenght > 0)  scroll = true;
 						},
 					});
