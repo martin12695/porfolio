@@ -6,7 +6,7 @@
 	<div class="prj-head">
 		<div class="title">
 			
-			<h3><span class="icon-title">&nbsp;</span> Project title - project title Name</h3>
+			<h3><span class="icon-title">&nbsp;</span> {{$info->title}}</h3>
 		</div>
 		<div class="short-desc">
 			<table>
@@ -51,7 +51,7 @@
 				<a href="#">Back to PROJECTS</a>
 			</div>
 			<div class="col-xs-6" style="text-align: right;">
-				<a href="#">Prev</a>/<a href="#">Next</a>
+				<a href="/project/{{$slug_previous}}">Prev</a>/<a href="/project/{{$slug_next}}">Next</a>
 			</div>
 		</div>
 	</div>
