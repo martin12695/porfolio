@@ -55,8 +55,13 @@ class HomeController extends Controller
     public function getDetail($slug)
     {
         $info =  DB::table('overview')->where('slug',$slug)->first();
+        $next = DB::select('select slug from overview where id = (select min(id) from overview where id > ?)',[$info->id])[0];
+        $previous = DB::select('select * from overview where id = (select max(id) from overview where id < ?))',[$info->id])[0];
         return view('project_detail',
-            ['info' =>  $info ]);
+            [   'info' =>  $info,
+                'slug_next'  => $next,
+                'slug_previous'=>$previous
+            ]);
     }
 
     /**
