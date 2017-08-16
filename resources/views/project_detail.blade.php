@@ -51,7 +51,7 @@
 				<a href="#">Back to PROJECTS</a>
 			</div>
 			<div class="col-xs-6" style="text-align: right;">
-				<a href="#">Prev</a>/<a href="#">Next</a>
+				<a href="/project/{{$slug_previous}}">Prev</a>/<a href="/project/{{$slug_next}}">Next</a>
 			</div>
 		</div>
 	</div>
