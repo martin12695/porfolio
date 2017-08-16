@@ -68,7 +68,7 @@
 					<div class="prj-rcm-hover"></div>
 				</div>
 				<a class="prj-rcm-title" href="#">Project title</a>
-				<p>Lorem ipsum dolor sit amet (maybe short description)</p>
+				<p>Lorem ipsum dolor sit amet (Address field)</p>
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-3 prj-rcm-block">
 				<a class="prj-link" href="#"></a>
@@ -76,7 +76,7 @@
 					<div class="prj-rcm-hover"></div>
 				</div>
 				<a class="prj-rcm-title" href="#">Project title</a>
-				<p>Lorem ipsum dolor sit amet (maybe short description)</p>
+				<p>Lorem ipsum dolor sit amet (Address field)</p>
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-3 prj-rcm-block">
 				<a class="prj-link" href="#"></a>
@@ -84,7 +84,7 @@
 					<div class="prj-rcm-hover"></div>
 				</div>
 				<a class="prj-rcm-title" href="#">Project title</a>
-				<p>Lorem ipsum dolor sit amet (maybe short description)</p>
+				<p>Lorem ipsum dolor sit amet (Address field)</p>
 			</div>
 			<div class="col-xs-12 col-sm-6 col-md-3 prj-rcm-block">
 				<a class="prj-link" href="#"></a>
@@ -92,7 +92,7 @@
 					<div class="prj-rcm-hover"></div>
 				</div>
 				<a class="prj-rcm-title" href="#">Project title</a>
-				<p>Lorem ipsum dolor sit amet (maybe short description)</p>
+				<p>Lorem ipsum dolor sit amet (Address field)</p>
 			</div>
 			
 		</div>
