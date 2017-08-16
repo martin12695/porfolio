@@ -6,7 +6,7 @@
 	<div class="prj-head">
 		<div class="title">
 			
-			<h3><span class="icon-title">&nbsp;</span> Project title - project title Name</h3>
+			<h3><span class="icon-title">&nbsp;</span> {{$info->title}}</h3>
 		</div>
 		<div class="short-desc">
 			<table>
