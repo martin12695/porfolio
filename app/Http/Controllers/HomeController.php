@@ -69,10 +69,13 @@ class HomeController extends Controller
             $previous = (object)[];
             $previous->slug = $slug;
         }
+
+        $random = DB::table('overview')->where('id','!=',$info->id)->inRandomOrder()->limit(6)->get();
         return view('project_detail',
-            [   'info' =>  $info,
+            [   'info' => $info,
                 'slug_next'  => $next->slug,
-                'slug_previous'=>$previous->slug
+                'slug_previous' => $previous->slug,
+                'random'        => $random
             ]);
     }
 

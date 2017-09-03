@@ -57,49 +57,15 @@
 	</div>
 	<div class="prj-recommended">
 		<div class="row">
+			@foreach($random as $item )
 			<div class="col-xs-12 col-sm-4 prj-rcm-block">
-				<a class="prj-link" href="#"></a>
-				<div class="prj-rcm-thumb" style="background-image: url('../images/thum/15023852348b66cbdb-804e-4120-9507-6fae34b7690b_rwc_0x-29x1885x1259x1885.jpg');">
-					<div class="prj-rcm-hover"></div>
+				<a class="prj-link" href="{{url('/project/'.$item->slug)}}"></a>
+				<div class="prj-rcm-thumb" style="background-image: url('/images/thum/{{$item->link_image}}');">
+					<div class="prj-rcm-hover">{{$item->short_des}}</div>
 				</div>
-				<a class="prj-rcm-title" href="#">Project title</a>
+				<a class="prj-rcm-title" href="{{url('/project/'.$item->slug)}}">{{$item->title}}</a>
 			</div>
-			<div class="col-xs-12 col-sm-4 prj-rcm-block">
-				<a class="prj-link" href="#"></a>
-				<div class="prj-rcm-thumb" style="background-image: url('../images/thum/15023852348b66cbdb-804e-4120-9507-6fae34b7690b_rwc_0x-29x1885x1259x1885.jpg');">
-					<div class="prj-rcm-hover"></div>
-				</div>
-				<a class="prj-rcm-title" href="#">Project title</a>
-			</div>
-			<div class="col-xs-12 col-sm-4 prj-rcm-block">
-				<a class="prj-link" href="#"></a>
-				<div class="prj-rcm-thumb" style="background-image: url('../images/thum/15023852348b66cbdb-804e-4120-9507-6fae34b7690b_rwc_0x-29x1885x1259x1885.jpg');">
-					<div class="prj-rcm-hover"></div>
-				</div>
-				<a class="prj-rcm-title" href="#">Project title</a>
-			</div>
-			<div class="col-xs-12 col-sm-4 prj-rcm-block">
-				<a class="prj-link" href="#"></a>
-				<div class="prj-rcm-thumb" style="background-image: url('../images/thum/15023852348b66cbdb-804e-4120-9507-6fae34b7690b_rwc_0x-29x1885x1259x1885.jpg');">
-					<div class="prj-rcm-hover"></div>
-				</div>
-				<a class="prj-rcm-title" href="#">Project title</a>
-			</div>
-			<div class="col-xs-12 col-sm-4 prj-rcm-block">
-				<a class="prj-link" href="#"></a>
-				<div class="prj-rcm-thumb" style="background-image: url('../images/thum/15023852348b66cbdb-804e-4120-9507-6fae34b7690b_rwc_0x-29x1885x1259x1885.jpg');">
-					<div class="prj-rcm-hover"></div>
-				</div>
-				<a class="prj-rcm-title" href="#">Project title</a>
-			</div>
-			<div class="col-xs-12 col-sm-4 prj-rcm-block">
-				<a class="prj-link" href="#"></a>
-				<div class="prj-rcm-thumb" style="background-image: url('../images/thum/15023852348b66cbdb-804e-4120-9507-6fae34b7690b_rwc_0x-29x1885x1259x1885.jpg');">
-					<div class="prj-rcm-hover"></div>
-				</div>
-				<a class="prj-rcm-title" href="#">Project title</a>
-			</div>
-			
+			@endforeach
 		</div>
 	</div>
 
