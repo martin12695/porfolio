@@ -24,13 +24,18 @@ $(document).ready(function(){
 
 	var $img = $('img');
 	$img.each(function(){
+		var windowHeight = $(window).height();
 		var $this = $(this);
 		$this.click(function(){
 			var src = $this.attr('src');
 			var Img = $('#imgDetail img');
 			var imgDetail = $('#imgDetail');
 			Img.attr('src', src);
+			
 			imgDetail.fadeIn();
+			var imgHeight = Img.height();
+			var marginTop = (windowHeight-imgHeight)/2;
+			Img.css('margin-top', marginTop+'px');
 		});
 	});
 

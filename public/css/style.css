@@ -64,6 +64,7 @@ body{
 	font-family: Helvetica, sans-serif;
 	color: #333;
 	font-size: 14px;
+	overflow-x: hidden;
 }
 
 #loadingData{
@@ -87,7 +88,6 @@ body img:hover{
 }
 
 #Filter{
-	text-align: right;
 	padding-right: 15px;
 }
 
@@ -95,8 +95,10 @@ body img:hover{
 	border: 0;
 	display: inline-block;
 	padding-right: 20px;
-	padding-left: 10px;
+	margin-left: 25px;
 	height: 40px;
+	background-color: #fff;
+	color: #333;
 }
 
 #backtotop{
@@ -158,6 +160,7 @@ body img:hover{
 	max-height: 90%;
 	max-width: 80%;
 	margin-top: 20px;
+	border: 8px solid #fff;
 }
 
 #imgDetail img:hover{
@@ -453,6 +456,10 @@ body img:hover{
 		padding-right: 0;
 	}
 
+	#Filter select{
+		margin-left: 0;
+	}
+
 
 	#header{
 		padding-top: 125px;
@@ -520,6 +527,7 @@ body img:hover{
 		text-decoration: none;
 		color: #333;
 		font-size: 14px;
+		text-transform: uppercase;
 	}
 
 	#header > .container > .row > .navbar > ul > li > a > i{
@@ -527,7 +535,7 @@ body img:hover{
 	}
 
 	#content{
-		margin-top: 100px;
+		margin-top: 50px;
 	}
 
 	#footer{

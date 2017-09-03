@@ -1,7 +1,7 @@
 .icon-title{
 	display: inline-block;
-	width: 40px;
-	height: 40px;
+	width: 20px;
+	height: 20px;
 	background-image: url('../icon/star-icon.png');
 	background-size: cover;
 	background-position: center;
@@ -19,6 +19,7 @@
 	display: inline-block;
 	vertical-align: middle;
 	text-transform: uppercase;
+	font-size: 14px;
 }
 
 .prj-head > .short-desc{
@@ -56,13 +57,16 @@
 	background-position: center;
 	background-repeat: no-repeat;
 }
-.prj-recommended{
-	text-align: center;
-}
 
 .prj-recommended .prj-rcm-block{
 	position: relative;
 	margin-bottom: 45px;
+}
+
+.prj-recommended .title-modules h3{
+	font-size: 18px;
+	padding-left: 15px;
+	padding-bottom: 20px;
 }
 
 .prj-recommended a.prj-link{
@@ -72,11 +76,14 @@
 	height: 100%;
 }
 
+.prj-recommended .prj-rcm-block p{
+	font-size: 12px;
+	color: #aaa;
+}
+
 .prj-recommended a.prj-rcm-title{
 	text-decoration: none;
-	font-size: 16px;
-	text-transform: uppercase;
-	text-align: center;
+	font-size: 14px;
 	color: #333;
 	display: block;
 	width: 100%;
@@ -127,5 +134,13 @@ article{
 	#header .container .row{
 		margin-left: -15px;
 		margin-right: -15px;
+	}
+	article{
+		padding-left: 95px;
+		padding-right: 95px;
+	}
+	.prj-recommended .col-sm-6{
+		padding-left: 15px !important;
+		padding-right: 15px !important;
 	}
 }
