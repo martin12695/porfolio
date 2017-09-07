@@ -25,7 +25,7 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/sketch', 'AdminController@getSketch');
     Route::get('/sketch/add', 'AdminController@addSketch');
     Route::post('/sketch/save', 'AdminController@saveSketch');
-
+    Route::get('/image-manage', 'AdminController@uploadImg');
 });
 
 

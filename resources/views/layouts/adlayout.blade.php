@@ -77,12 +77,7 @@
 
     <li><a href=""><i class="icon icon-user"></i> <span>Edit profile</span></a></li>
 
-    <li class="submenu"> <a href="#"><i class="icon icon-picture"></i> <span>Upload images</span> <span class="label label-important">2</span></a>
-      <ul>
-        <li><a href="">List Images</a></li>
-        <li><a href="">Upload new</a></li>
-      </ul>
-    </li>
+    <li><a href="#"><i class="icon icon-picture"></i> <span>Upload images</span></a> </li>
 
     <li><a href="#"><i class="icon icon-envelope"></i> <span>Contact to webmaster</span></a> </li>
   </ul>

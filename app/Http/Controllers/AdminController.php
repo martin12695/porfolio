@@ -181,4 +181,8 @@ class AdminController extends Controller
         DB::table('overview')->where('id',$id)->delete();
         return back();
     }
+
+    public function uploadImg(){
+        return view('upload_img');
+    }
 }
