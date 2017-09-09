@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="{{url('/admin_temp/css/fullcalendar.css')}}" />
 <link rel="stylesheet" href="{{url('/admin_temp/css/matrix-style.css')}}" />
 <link rel="stylesheet" href="{{url('/admin_temp/css/matrix-media.css')}}" />
+<link rel="stylesheet" href="{{url('/admin_temp/css/uniform.css')}}" />
 <link href="{{url('/admin_temp/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
 <link rel="stylesheet" href="{{url('/admin_temp/css/jquery.gritter.css')}}" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
@@ -77,7 +78,7 @@
 
     <li><a href=""><i class="icon icon-user"></i> <span>Edit profile</span></a></li>
 
-    <li><a href="#"><i class="icon icon-picture"></i> <span>Upload images</span></a> </li>
+    <li><a href="{{url('/dashboard/image-manage')}}"><i class="icon icon-picture"></i> <span>Upload images</span></a> </li>
 
     <li><a href="#"><i class="icon icon-envelope"></i> <span>Contact to webmaster</span></a> </li>
   </ul>
@@ -105,9 +106,9 @@
 
 <!--end-Footer-part-->
 
-<script>
+<!-- <script>
         $('.textarea_editor').wysihtml5();
-</script>
+</script> -->
 
 <script type="text/javascript">
   // This function is called from the pop-up menus to transfer to
