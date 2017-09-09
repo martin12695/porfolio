@@ -259,6 +259,15 @@ body img:hover{
 	margin-left: 15px;
 }
 
+#header > .container > .row .logo:hover{
+	background-image: url('../images/logo-hover.jpeg');
+	/* -webkit-animation: fadein 0.25s; 
+	   -moz-animation: fadein 0.25s; 
+		-ms-animation: fadein 0.25s; 
+	     -o-animation: fadein 0.25s;
+		    animation: fadein 0.25s; */
+}
+
 #header > .container > .row .logo > a:hover{
 	text-decoration: none;
 }
