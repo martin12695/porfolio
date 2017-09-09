@@ -23,16 +23,23 @@
               <span id="errorContent">Oop! Somethings happened!</span>
             </div>
         @endif
-        <form enctype="multipart/form-data" method="post" action="/dashboard/uploadImage">
-          {{ csrf_field() }}
-          <div class="control-group">
-            <label style="margin-left: 4px;" class="control-label">Upload new image</label>
-            <div class="controls">
-              <div class="uploader" id="uniform-undefined"><input type="file" name="images[]" size="19" style="opacity: 0;" accept="image/*" multiple><span class="filename">No file selected</span><span class="action">Choose File</span></div>
-            </div>
-            <button type="submit" style="margin-top: 20px;" class="btn btn-success">Upload</button>
-          </div>
+        <form enctype="multipart/form-data" method="post" id="dragForm">
+          
+        <div id="DropZone" class="dragndrop-zone">
+
+          <label for="Images"><strong>Browse files</strong> or drag file here</label>
+          <input type="file" accept="image/*" multiple name="images[]" id="Images" class="hidden">
+          
+        </div>
         </form>
+        <div id="PrevZone" class="preview-zone" style="display: none">
+          <div class="cont">
+            
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-info upload-btn" style="display:none;" id="ActUpload">Upload</button>
+        <button type="button" class="btn upload-btn" id="CancelUpload" style="display:none;">Cancel</button>
       </div>
     </div>
   </div>
@@ -62,12 +69,124 @@
     </div>
 
     <style>
+      .upload-btn{
+        margin-top: 25px;
+      }
+
+      div.dragndrop-zone{
+        width: 100%;
+        background-color: #fff;
+        border: 2px dashed #ccc;
+        position: relative;
+        height: 100px;
+        margin-bottom: 25px;
+      }
+
+      div.dragndrop-zone-dragover{
+        background-color: #e3eff5;
+      }
+
+      div.dragndrop-zone:hover{
+        background-color: #e3eff5;
+        
+      }
+
+      div.dragndrop-zone:hover > label{
+        color: #0955b7;
+      }
+
+      div.dragndrop-zone > label{
+        text-align: center;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 20px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+      div.preview-zone{
+        width: 100%;
+        height: 120px;
+        position: relative;
+        overflow-x: auto;
+      }
+      div.preview-zone > .cont{
+        position: absolute;
+        width: max-content;
+      }
+      div.preview-zone > .cont > img{
+        max-width: 157px;
+        max-height: 100px;
+        height: auto;
+        display: inline-block;
+      }
       .thumbnails .actions{
         margin-left: -16px;
+      }
+
+      #imgbox{
+        padding: 20px 20px;
+      }
+
+      #lightbox p{
+        right: 50px;
+      }
+
+      #imgbox img {
+        margin-top: 0;
+        max-height: 90%;
       }
     </style>
 
     <script>
+      var prevImage = function(input){
+        $('#PrevZone .cont').html('');
+        if (input.files){
+          var length = input.files.length;
+          for (i = 0; i < length; i++){
+            var reader = new FileReader();
+
+            reader.onload = function(e){
+              $('#PrevZone .cont').append('<img src="'+e.target.result+'">');
+            }
+
+            reader.readAsDataURL(input.files[i]);
+          }
+
+          $('#PrevZone').show();
+          $('#DropZone').hide();
+          $('#ActUpload').show();
+          $('#CancelUpload').show();
+        }
+      }
+
+      $('#CancelUpload').click(function(){
+        $('#PrevZone').hide();
+        $('#DropZone').show();
+        $('#ActUpload').hide();
+        $('#CancelUpload').hide();
+        $('#Images').val('');
+      });
+
+      $('#dragForm').on('drag dragstart dragend dragover dragenter dragleave drop', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+      }).on('dragover dragenter', function() {
+        $('#DropZone').addClass('dragndrop-zone-dragover');
+      }).on('dragleave dragend drop', function() {
+        $('#DropZone').removeClass('dragndrop-zone-dragover');
+      }).on('drop', function(e) {
+        droppedFiles = e.originalEvent.dataTransfer.files;
+        $('#Images').prop('files', droppedFiles);
+      });
+
+      $('#Images').change(function(){
+        if(this.files){
+          prevImage(this);
+        }
+        
+      });
+
       $('.btn-danger').each(function(){
         var $this = $(this);
         $this.click(function(){
