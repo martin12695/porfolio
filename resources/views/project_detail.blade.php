@@ -10,22 +10,30 @@
 		</div>
 		<div class="short-desc">
 			<table>
+				@if (!empty($info->address))
 				<tr>
 					<td width="200">ĐỊA ĐIỂM:</td>
 					<td>{{$info->address}}</td>
 				</tr>
+				@endif
+				@if (!empty($info->square))
 				<tr>
 					<td>Diện tích:</td>
 					<td>{{$info->square}}</td>
 				</tr>
+				@endif
+				@if (!empty($info->year))
 				<tr>
 					<td>Năm hoàn thành:</td>
 					<td>{{$info->year}}</td>
 				</tr>
+				@endif
+				@if (!empty($info->owner))
 				<tr>
 					<td>Chủ đầu tư:</td>
 					<td>{{$info->owner}}</td>
 				</tr>
+				@endif
 				<tr>
 					<td>Trạng thái:</td>
 					@if ( $info->status == 0)

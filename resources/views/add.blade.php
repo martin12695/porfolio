@@ -45,25 +45,25 @@
                         <div class="control-group">
                             <label class="control-label">Address :</label>
                             <div class="controls">
-                                <input name="address" type="text" class="span11" placeholder="Address" required>
+                                <input name="address" type="text" class="span11" placeholder="Address" >
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">Square :</label>
                             <div class="controls">
-                                <input name="square" type="text" class="span11" placeholder="Square" required>
+                                <input name="square" type="text" class="span11" placeholder="Square">
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">Year :</label>
                             <div class="controls">
-                                <input name="year" type="text" class="span11" placeholder="Year" required>
+                                <input name="year" type="text" class="span11" placeholder="Year">
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label">Owner :</label>
                             <div class="controls">
-                                <input name="owner" type="text" class="span11" placeholder="Owner" required>
+                                <input name="owner" type="text" class="span11" placeholder="Owner">
                             </div>
                         </div>
                         <div class="control-group">
