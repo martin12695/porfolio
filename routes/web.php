@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@index');
 
 
 Route::group(['prefix' => 'dashboard'], function () {
+    Route::post('/uploadImage', 'ImageController@uploadImage');
     Route::get('/', 'AdminController@index');
     Route::get('/project', 'AdminController@getProject');
     Route::get('/project/add', 'AdminController@addProject');
