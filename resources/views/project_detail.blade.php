@@ -63,7 +63,7 @@
 		</div>
 		<div class="row">
             @foreach($random as $item )
-                <div class="col-xs-12 col-sm-4 prj-rcm-block">
+                <div class="col-xs-12 col-sm-3 prj-rcm-block">
                     <a class="prj-link" href="{{url('/project/'.$item->slug)}}"></a>
                     <div class="prj-rcm-thumb" style="background-image: url('/images/thum/{{$item->link_image}}');">
                         <div class="prj-rcm-hover">{{$item->short_des}}</div>
