@@ -23,23 +23,23 @@
               <span id="errorContent">Oop! Somethings happened!</span>
             </div>
         @endif
-        <form enctype="multipart/form-data" method="post" id="dragForm">
-          
-        <div id="DropZone" class="dragndrop-zone">
+        <form enctype="multipart/form-data" method="post" id="dragForm" action="/dashboard/uploadImage" >
+          {{ csrf_field() }}
+          <div id="DropZone" class="dragndrop-zone">
 
-          <label for="Images"><strong>Browse files</strong> or drag file here</label>
-          <input type="file" accept="image/*" multiple name="images[]" id="Images" class="hidden">
-          
-        </div>
-        </form>
-        <div id="PrevZone" class="preview-zone" style="display: none">
-          <div class="cont">
-            
+            <label for="Images"><strong>Browse files</strong> or drag file here</label>
+            <input type="file" accept="image/*" multiple name="images[]" id="Images" class="hidden">
+
           </div>
-        </div>
+          <div id="PrevZone" class="preview-zone" style="display: none">
+            <div class="cont">
 
-        <button type="submit" class="btn btn-info upload-btn" style="display:none;" id="ActUpload">Upload</button>
-        <button type="button" class="btn upload-btn" id="CancelUpload" style="display:none;">Cancel</button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-info upload-btn" style="display:none;" id="ActUpload">Upload</button>
+          <button type="button" class="btn upload-btn" id="CancelUpload" style="display:none;">Cancel</button>
+        </form>
       </div>
     </div>
   </div>

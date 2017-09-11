@@ -43,7 +43,7 @@
             </div>
             <div class="widget-content">
                 <form action="#" method="post" class="form-horizontal">
-                    <textarea name="profile" id="Profile" rows="10" class="span12"></textarea>
+                    <textarea name="profile" id="Profile" rows="10" class="span12 textarea_editor content ckeditor"></textarea>
                     <div style="text-align: right;">
                         <button style="margin-top: 25px;" type="submit" class="btn btn-success">Save</button>
                     </div>
@@ -52,5 +52,6 @@
         </div>
     </div>
 </div>
-
+<script language="javascript" src="/js/ckeditor/ckeditor.js" type="text/javascript"></script>
+<script language="javascript" src="/js/ckeditor/config.js" type="text/javascript"></script>
 @endsection
