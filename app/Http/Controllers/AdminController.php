@@ -188,4 +188,8 @@ class AdminController extends Controller
             'images' => $info
         ]);
     }
+
+    public function changePass(){
+        return view('change_pass');
+    }
 }

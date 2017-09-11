@@ -60,6 +60,9 @@
             {{ csrf_field() }}
           </form>
         </li>
+        <li>
+          <a href="{{url('dashboard/change-password')}}"><i class="icon-ok"></i> Change password</a>
+        </li>
       </ul>
     </li>
     <li class=""><a target="_blank" href="/"><i class="icon icon-share-alt"></i> <span class="text">Visit site</span></a></li>
