@@ -192,4 +192,8 @@ class AdminController extends Controller
     public function changePass(){
         return view('change_pass');
     }
+
+    public function editProfile(){
+        return view('profile_setting');
+    }
 }

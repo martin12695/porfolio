@@ -79,7 +79,7 @@
 
     <li><a href="{{url('/dashboard/sketch')}}"><i class="icon icon-edit"></i> <span>Sketch</span></a></li>
 
-    <li><a href=""><i class="icon icon-user"></i> <span>Edit profile</span></a></li>
+    <li><a href="{{url('/dashboard/edit-profile')}}"><i class="icon icon-user"></i> <span>Edit profile</span></a></li>
 
     <li><a href="{{url('/dashboard/image-manage')}}"><i class="icon icon-picture"></i> <span>Upload images</span></a> </li>
 
