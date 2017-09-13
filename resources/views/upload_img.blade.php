@@ -63,6 +63,7 @@
               </li>
               @endforeach
             </ul>
+            {{ $images->links() }}
           </div>
         </div>
       </div>
