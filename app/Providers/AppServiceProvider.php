@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use DB;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('layouts.layout', function($view) {
+            $overviewData = DB::table('intro')->orderby('id','des')->first();
+            return $view->with('overviewData',$overviewData);
+        });
     }
 
     /**
