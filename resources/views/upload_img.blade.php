@@ -136,6 +136,12 @@
         margin-top: 0;
         max-height: 90%;
       }
+
+      .thumbnails img{
+        height: 95px;
+        display: block;
+        margin: 0 auto;
+      }
     </style>
 
     <script>
