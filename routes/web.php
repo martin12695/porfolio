@@ -15,6 +15,8 @@ Route::get('/', 'HomeController@index');
 
 
 Route::group(['prefix' => 'dashboard'], function () {
+    Route::post('/edit/profile-overview', 'AdminController@editProfileOverview');
+    Route::post('/edit/profile-detail', 'AdminController@editProfileDetail');
     Route::post('/uploadImage', 'ImageController@uploadImage');
     Route::get('/', 'AdminController@index');
     Route::get('/project', 'AdminController@getProject');
@@ -28,7 +30,7 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::post('/sketch/save', 'AdminController@saveSketch');
     Route::get('/image-manage', 'AdminController@uploadImg');
     Route::get('/change-password', 'AdminController@changePass');
-    Route::get('/edit-profile', 'AdminController@editProfile');
+    Route::get('/edit-profile', 'AdminController@getEditProfileView');
 });
 
 

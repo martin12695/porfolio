@@ -12,17 +12,18 @@
                 <h5>Setting</h5>
             </div>
             <div class="widget-content">
-                <form id="Setting" action="#" method="post" class="form-horizontal">
+                <form id="Setting" action="/dashboard/edit/profile-overview" method="post" class="form-horizontal">
+                    {{ csrf_field() }}
                     <div class="control-group">
                         <label class="control-label">Facebook:</label>
                         <div class="controls">
-                            <input name="facebook" type="text" class="span12" placeholder="Facebook">
+                            <input name="facebook" type="text" class="span12" placeholder="Facebook" value="{{$data->facebook}}">
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Instagram:</label>
                         <div class="controls">
-                            <input name="insta" type="text" class="span12" placeholder="Instagram">
+                            <input name="insta" type="text" class="span12" placeholder="Instagram" value="{{$data->instagram}}">
                         </div>
                     </div>
                     <div style="text-align: right;">
@@ -42,8 +43,9 @@
                 <h5>Edit profile</h5>
             </div>
             <div class="widget-content">
-                <form action="#" method="post" class="form-horizontal">
-                    <textarea name="profile" id="Profile" rows="10" class="span12 textarea_editor content ckeditor"></textarea>
+                <form  method="post" class="form-horizontal" action="/dashboard/edit/profile-detail">
+                    {{ csrf_field() }}
+                    <textarea name="profile" id="Profile" rows="10" class="span12 textarea_editor content ckeditor">{{$data->profile}}</textarea>
                     <div style="text-align: right;">
                         <button style="margin-top: 25px;" type="submit" class="btn btn-success">Save</button>
                     </div>

@@ -193,7 +193,33 @@ class AdminController extends Controller
         return view('change_pass');
     }
 
-    public function editProfile(){
-        return view('profile_setting');
+    public function getEditProfileView(){
+        $data = DB::table('intro')->first();
+        return view('profile_setting', ['data' => $data]);
     }
+
+    public function editProfileOverview(Request $request){
+        $data = $request->input();
+        DB::table('intro')
+            ->where('id', 1)
+            ->update(
+                [   'facebook' => $data['facebook'],
+                    'instagram' => $data['insta'],
+                ]
+            );
+        return back();
+    }
+
+
+    public function editProfileDetail (Request $request) {
+        $data = $request->input();
+        DB::table('intro')
+            ->where('id', 1)
+            ->update(
+                [   'profile' => $data['profile'],
+                ]
+            );
+        return back();
+    }
+
 }
