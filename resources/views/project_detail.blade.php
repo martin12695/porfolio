@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('page-title', 'Profile')
+@section('page-title', 'Project')
 @section('customJs', 'index.js')
 @section('customCss', '/css/project_detail.css')
 @section('content')
