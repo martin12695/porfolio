@@ -38,6 +38,10 @@
                         <div class="controls">
                             <input name="confPass" id='confirmPass' minlength="8" type="password" class="span12" placeholder="Confirm password" required>
                         </div>
+                        <div id="err-fail-confirm" style="display: none;" class="alert alert-error alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
+                            <h4 class="alert-heading"><i class="icon-remove-sign"></i> Error!</h4>
+                            <span>Confirm password not match</span>
+                        </div>
                     </div>
                     <div style="text-align: right;">
                         <button style="margin-top: 25px;" type="button" class="btn" onclick="resetform()">Reset</button>
@@ -60,10 +64,10 @@
     function submitForm(obj){
         var $form = $('#changePassForm');
         if ($form.valid() ){
-            var content = "Waiting...";
-            $(obj).html(content);
-            $(obj).attr('disabled', true);
             if ($('#confirmPass').val() == $('#newPass').val() ) {
+                var content = "Waiting...";
+                $(obj).html(content);
+                $(obj).attr('disabled', true);
                 $.ajax({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -93,6 +97,9 @@
                         $(obj).attr('disabled', false);
                     },
                 });
+            } else {
+                $('#err-fail-confirm span').html(err);
+                $('#err-fail-confirm').fadeIn();
             }
         }
 
