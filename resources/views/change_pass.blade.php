@@ -6,6 +6,14 @@
 
 <div class="row-fluid">
     <div class="span12">
+        <div id="err-success" style="display: none;" class="alert alert-success alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading"><i class="icon-ok"></i> Success!</h4> 
+            <span>Your password is changed.</span>
+        </div>
+        <div id="err-fail" style="display: none;" class="alert alert-error alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading"><i class="icon-remove-sign"></i> Error!</h4>
+            <span>Your old password you enter not valid!</span>
+        </div>
         <div class="widget-box">
             <div class="widget-title">
                 <span class="icon"><i class="icon-ok"></i></span>
@@ -67,8 +75,20 @@
                     } ,
                     url: '/dashboard/change-password',
                     success: function($response) {
-                        alert($response);
-                        console.log($response);
+                        if ($response == 1) {
+                            $('#err-success').fadeIn();
+                        }
+                        if ($response == 2) {
+                            var err = 'Your old password you enter not valid!';
+                            $('#err-fail span').html(err);
+                            $('#err-fail').fadeIn();
+                        }
+
+                        if ($response == 3) {
+                            var err = 'Something is happened!';
+                            $('#err-fail span').html(err);
+                            $('#err-fail').fadeIn();
+                        }
                         $(obj).html('Save');
                         $(obj).attr('disabled', false);
                     },
