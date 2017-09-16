@@ -59,7 +59,7 @@
 				<a href="#">Back to PROJECTS</a>
 			</div>
 			<div class="col-xs-6" style="text-align: right;">
-				<a href="/project/{{$slug_previous}}">Prev</a>/<a href="/project/{{$slug_next}}">Next</a>
+				<a href="/project/{{$slug_previous}}">Prev </a> / <a href="/project/{{$slug_next}}"> Next</a>
 			</div>
 		</div>
 	</div>
@@ -74,7 +74,7 @@
                 <div class="col-xs-12 col-sm-3 prj-rcm-block">
                     <a class="prj-link" href="{{url('/project/'.$item->slug)}}"></a>
                     <div class="prj-rcm-thumb" style="background-image: url('/images/thum/{{$item->link_image}}');">
-                        <div class="prj-rcm-hover">{{$item->short_des}}</div>
+                        <!-- <div class="prj-rcm-hover">{{$item->short_des}}</div> -->
                     </div>
                     <a class="prj-rcm-title" href="{{url('/project/'.$item->slug)}}">{{$item->title}}</a>
                     <p>{{$item->address}}</p>

@@ -33,7 +33,7 @@
                     </div>
                     <div style="text-align: right;">
                         <button style="margin-top: 25px;" type="button" class="btn" onclick="resetform()">Reset</button>
-                        <button style="margin-top: 25px;" type="button" onclick="submitForm()" class="btn btn-success">Save</button>
+                        <button style="margin-top: 25px;" type="button" onclick="submitForm(this)" class="btn btn-success"> Save</button>
                     </div>
                 </form>
             </div>
@@ -49,9 +49,12 @@
         });
     }
 
-    function submitForm(){
+    function submitForm(obj){
         var $form = $('#changePassForm');
         if ($form.valid() ){
+            var content = "Waiting...";
+            $(obj).html(content);
+            $(obj).attr('disabled', true);
             if ($('#confirmPass').val() == $('#newPass').val() ) {
                 $.ajax({
                     headers: {
@@ -64,8 +67,10 @@
                     } ,
                     url: '/dashboard/change-password',
                     success: function($response) {
+                        alert($response);
                         console.log($response);
-
+                        $(obj).html('Save');
+                        $(obj).attr('disabled', false);
                     },
                 });
             }
