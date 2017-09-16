@@ -18,6 +18,7 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::post('/edit/profile-overview', 'AdminController@editProfileOverview');
     Route::post('/edit/profile-detail', 'AdminController@editProfileDetail');
     Route::post('/uploadImage', 'ImageController@uploadImage');
+    Route::get('/deleteImage/{imageId}', 'ImageController@deleteImg')->where(['imageId' => '[0-9]+']);
     Route::get('/', 'AdminController@index');
     Route::get('/project', 'AdminController@getProject');
     Route::get('/project/add', 'AdminController@addProject');

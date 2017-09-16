@@ -54,10 +54,10 @@
           <div class="widget-content">
             <ul class="thumbnails">
               @foreach($images as $image)
-              <li class="span2"> <a> <img src="{{url('/images/Upload/'.$image->name)}}" alt="" > </a>
+              <li class="span2 image-block" imageId="{{$image->id}}"> <a> <img src="{{url('/images/Upload/'.$image->name)}}" alt="" > </a>
                 <div class="control">
                   <input style="margin-left: 0 !important;" type="text" class="span12" value="{{url('/images/Upload/'.$image->name)}}">
-                  <button class="btn btn-mini btn-danger">Delete</button>
+                  <button class="btn btn-mini btn-danger" imageId="{{$image->id}}">Delete</button>
                   <button class="btn btn-mini btn-info lightbox_trigger" href="{{url('/images/Upload/'.$image->name)}}">View</button>
                 </div>
               </li>
@@ -198,11 +198,21 @@
         var $this = $(this);
         $this.click(function(){
           if (confirm('Do you want delete this image?')) {
-            alert('yes');
-            //do something :))))
+            alert('Yes');
+            $imageId = $this.attr("imageId");
+            $.ajax({
+              type: "GET",
+              url: '/dashboard/deleteImage/' + $imageId ,
+              success: function($response) {
+                console.log($response);
+               if ($response == 1 ) {
+                 $('.image-block[imageId="' + $imageId + '"]').remove();
+               }
+              },
+            });
           }
           else{
-            alert('no');
+            alert('No');
           }
         });
       });

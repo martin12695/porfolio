@@ -185,7 +185,7 @@ class AdminController extends Controller
     }
 
     public function uploadImg(){
-        $info = DB::table('image')->paginate(10);
+        $info = DB::table('image')->paginate(18);
         return view('upload_img', [
             'images' => $info
         ]);

@@ -30,9 +30,16 @@ class ImageController  extends Controller
                         'name'    => $name
                     ]);
                 }
-
             }
             return back()->with('response', 1);
         }
+    }
+
+    public function deleteImg($id) {
+        $name = DB::table('image')->select('name')->where('id',$id)->first();
+        File::delete('images/Upload/'.$name->name);
+        DB::table('image')->where('id',$id)->delete();
+        //Delete success
+        return \Response::json(1);
     }
 }
