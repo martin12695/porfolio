@@ -95,8 +95,7 @@
         <script>
             $('#btnSubmit').click(function(e){
                 var $form = $('#formAction');
-                var txt = $('#Content').val();
-                if ($form.valid() && txt != '') {
+                if ($form.valid() && CKEDITOR.instances.Content.getData() != '') {
                     $form.submit();
                 } else {
                     $('#errorContent').html('Your content is empty! Please enter your content');

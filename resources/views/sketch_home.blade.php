@@ -10,7 +10,7 @@
 			<div class="sketch-thumb" style="background-image: url('./images/thum/{{$item->image}}');">&nbsp;</div>
 			<h1>{{$item->title}}</h1>
 			<article>
-				<i>{{$item->content}}  </i>
+				<i>{!! $item->content !!} </i>
 			</article>
 		</div>
 		@endforeach

@@ -78,7 +78,7 @@
                         <div class="control-group">
                             <label class="control-label">Content :</label>
                             <div class="controls" style="position: relative">
-                                <textarea class="textarea_editor content ckeditor" rows="12" name="content" resize="true"></textarea>
+                                <textarea class="textarea_editor content ckeditor" rows="12" name="content" id="Content" resize="true"></textarea>
                             </div>
                         </div>
                         <div class="control-group">
@@ -130,8 +130,7 @@
         <script>
             $('#btnSubmit').click(function(e){
                 var $form = $('#formAction');
-                var txt = $('#Content').val();
-                if ($form.valid() && txt != '') {
+                if ($form.valid() && CKEDITOR.instances.Content.getData() != '') {
                     $form.submit();
                 } else {
                     $('#errorContent').html('Your content is empty! Please enter your content');
