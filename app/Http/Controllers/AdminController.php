@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Carbon;
 use Illuminate\Support\Facades\Validator;
 use File;
+use Illuminate\Support\Facades\Hash;
+use Auth;
 
 class AdminController extends Controller
 {
@@ -191,6 +193,25 @@ class AdminController extends Controller
 
     public function changePass(){
         return view('change_pass');
+    }
+
+    public function doChangePass(Request $request){
+        if (Auth::check()) {
+            $info = $request->input();
+            if(Hash::check($info['oldPass'], Auth::user()->password)){
+                $passHash = Hash::make($info['newPass']);
+                DB::table('users')
+                    ->where('id', Auth::id())
+                    ->update(['password' => $passHash]);
+                return \Response::json(1);
+            }else{
+                return \Response::json(2);
+            }
+        } else {
+            return \Response::json(3);
+        }
+
+
     }
 
     public function getEditProfileView(){

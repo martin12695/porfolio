@@ -30,6 +30,8 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::post('/sketch/save', 'AdminController@saveSketch');
     Route::get('/image-manage', 'AdminController@uploadImg');
     Route::get('/change-password', 'AdminController@changePass');
+    Route::post('/change-password', 'AdminController@doChangePass');
+    Route::post('/edit/profile-overview', 'AdminController@editProfileOverview');
     Route::get('/edit-profile', 'AdminController@getEditProfileView');
 });
 

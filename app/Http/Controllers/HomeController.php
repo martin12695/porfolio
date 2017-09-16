@@ -23,7 +23,8 @@ class HomeController extends Controller
 
     public function profile()
     {
-        return view('profile');
+        $profile = DB::table('intro')->select('profile')->first();
+        return view('profile',['profile'=>$profile]);
     }
 
     public function sketch(){

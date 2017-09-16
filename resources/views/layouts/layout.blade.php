@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>KON | @yield('page-title')</title>
-
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/css/style.css">
@@ -41,8 +41,8 @@
 				</div>
 				<ul>
 					<li><a href="/">Project</a></li>
-					<li><a href="./sketch">Sketch</a></li>
-					<li><a href="./profile">Profile</a></li>
+					<li><a href="/sketch">Sketch</a></li>
+					<li><a href="/profile">Profile</a></li>
 					<li><a href="{{$overviewData->facebook}}"><i class="fa fa-facebook"></i></a></li>
 					<li><a href="{{$overviewData->instagram}}"><i class="fa fa-instagram"></i></a></li>
 				</ul>
@@ -57,8 +57,8 @@
 					<div class="col-md-8 navbar hidden-xs hidden-sm">
 						<ul>
 							<li><a href="/">Project</a></li>
-							<li><a href="./sketch">Sketch</a></li>
-							<li><a href="">Profile</a></li>
+							<li><a href="/sketch">Sketch</a></li>
+							<li><a href="/profile">Profile</a></li>
 							<li><a href="{{$overviewData->facebook}}"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="{{$overviewData->instagram}}"><i class="fa fa-instagram"></i></a></li>
 						</ul>

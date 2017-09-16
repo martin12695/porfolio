@@ -16,24 +16,24 @@
                     <div class="control-group">
                         <label class="control-label">Current password:</label>
                         <div class="controls">
-                            <input name="currPass" type="password" class="span12" placeholder="Current password">
+                            <input name="currPass" type="password" class="span12" id="oldPass" placeholder="Current password" required>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">New password:</label>
                         <div class="controls">
-                            <input name="newPass" type="password" class="span12" placeholder="New password">
+                            <input name="newPass" type="password" id="newPass" minlength="8" class="span12" placeholder="New password" required>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label">Confirm password:</label>
                         <div class="controls">
-                            <input name="confPass" type="password" class="span12" placeholder="Confirm password">
+                            <input name="confPass" id='confirmPass' minlength="8" type="password" class="span12" placeholder="Confirm password" required>
                         </div>
                     </div>
                     <div style="text-align: right;">
                         <button style="margin-top: 25px;" type="button" class="btn" onclick="resetform()">Reset</button>
-                        <button style="margin-top: 25px;" type="submit" class="btn btn-success">Save</button>
+                        <button style="margin-top: 25px;" type="button" onclick="submitForm()" class="btn btn-success">Save</button>
                     </div>
                 </form>
             </div>
@@ -48,6 +48,32 @@
             $this.val('');
         });
     }
+
+    function submitForm(){
+        var $form = $('#changePassForm');
+        if ($form.valid() ){
+            if ($('#confirmPass').val() == $('#newPass').val() ) {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: "POST",
+                    data : {
+                        oldPass : $('#oldPass').val(),
+                        newPass : $('#confirmPass').val()
+                    } ,
+                    url: '/dashboard/change-password',
+                    success: function($response) {
+                        console.log($response);
+
+                    },
+                });
+            }
+        }
+
+    }
+
+
 </script>
 
 @endsection
