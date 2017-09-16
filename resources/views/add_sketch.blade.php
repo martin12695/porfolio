@@ -45,7 +45,7 @@
                         <div class="control-group">
                             <label class="control-label">Content :</label>
                             <div class="controls">
-                                <textarea class="span11 textarea_editor" rows="12" name="content" id="Content" resize="true"></textarea>
+                                <textarea class="span11 textarea_editor content ckeditor" rows="12" name="content" id="Content" resize="true"></textarea>
                             </div>
                         </div>
                         <div class="control-group">
@@ -130,5 +130,7 @@
                 $('#fileUpload').show();
             });
         </script>
+        <script language="javascript" src="/js/ckeditor/ckeditor.js" type="text/javascript"></script>
+        <script language="javascript" src="/js/ckeditor/config.js" type="text/javascript"></script>
     </div>
 @endsection
