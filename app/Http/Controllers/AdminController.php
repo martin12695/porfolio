@@ -132,6 +132,11 @@ class AdminController extends Controller
 
     }
 
+    public function deleteSketch($id){
+        DB::table('sketch')->where('id',$id)->delete();
+        return back();
+    }
+
     public function saveIdProject(Request $request, $id) {
         $data = $request->input();
         if ( $request->hasFile('image') ){

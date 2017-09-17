@@ -29,8 +29,8 @@
                   <td>{{$item->title}}</td>
                   <td>{{$item->short_des}}</td>
                   <td class="center" style="text-align: center;">
-                  	<a href="{{url('/dashboard/project/edit/'.$item->id)}}" class="btn btn-primary btn-mini">Edit</a>
-                  	<a href="{{url('/dashboard/project/delete/'.$item->id)}}" class="btn btn-danger btn-mini" onclick="return confirm('Are you sure want to delete project?')">Delete</a>
+                  	<a href="{{url('/dashboard/sketch/edit/'.$item->id)}}" class="btn btn-primary btn-mini">Edit</a>
+                  	<a href="{{url('/dashboard/sketch/delete/'.$item->id)}}" class="btn btn-danger btn-mini" onclick="return confirm('Are you sure want to delete project?')">Delete</a>
                   </td>
                 </tr>
               @endforeach
