@@ -83,7 +83,7 @@
                             $('#err-success').fadeIn();
                         }
                         if ($response == 2) {
-                            var err = 'Your old password you enter not valid!';
+                            var err = 'Your old password you enter does not valid!';
                             $('#err-fail span').html(err);
                             $('#err-fail').fadeIn();
                         }
@@ -98,8 +98,9 @@
                     },
                 });
             } else {
-                $('#err-fail-confirm span').html(err);
-                $('#err-fail-confirm').fadeIn();
+                var err = 'Your confirm password does not valid!';
+                $('#err-fail span').html(err);
+                $('#err-fail').fadeIn();
             }
         }
 
