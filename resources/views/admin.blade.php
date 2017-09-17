@@ -6,13 +6,7 @@
 
 <div class="quick-actions_homepage">
 	<ul class="quick-actions">
-		<li class="bg_lb span3">
-			<a href="#">
-				<i class="icon-bar-chart"></i>
-				Views: 123456
-			</a>
-		</li>
-		<li class="bg_ly">
+		<li class="bg_ly span3">
 			<a href="#">
 				<i class="icon-book"></i>
 				<span class="label label-important">20</span>
@@ -26,7 +20,7 @@
 				Sketch
 			</a>
 		</li>
-		<li class="bg_ls">
+		<li class="bg_ls span3">
 			<a href="#">
 				<i class="icon-picture"></i>
 				<span class="label label-important">16</span>
