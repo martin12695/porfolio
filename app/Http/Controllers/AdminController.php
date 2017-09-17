@@ -24,7 +24,14 @@ class AdminController extends Controller
     }
 
     public function index() {
-        return view ('admin');
+        $project =  DB::table('overview')->count();
+        $sketch =  DB::table('sketch')->count();
+        $image = DB::table('image')->count();
+        return view ('admin', [
+            'project' => $project,
+            'sketch'  => $sketch,
+            'image'   => $image
+        ]);
     }
 
     public function getProject() {
