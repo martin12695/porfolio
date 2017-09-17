@@ -56,6 +56,13 @@ class HomeController extends Controller
     public function getDetail($slug)
     {
         $info =  DB::table('overview')->where('slug',$slug)->first();
+        DB::table('overview')->where('slug',$slug)->first();
+        $view = $info->views + 1;
+        DB::table('overview')
+            ->where('id', $info->id)
+            ->update(
+                [   'views' => $view]
+            );
         $next = DB::select('select slug from overview where id = (select min(id) from overview where id > ?)',[$info->id]);
         if (!empty($next) ) {
             $next = $next[0];

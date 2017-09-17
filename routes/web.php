@@ -29,7 +29,9 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/sketch', 'AdminController@getSketch');
     Route::get('/sketch/add', 'AdminController@addSketch');
     Route::post('/sketch/save', 'AdminController@saveSketch');
+    Route::post('/sketch/save/{id}', 'AdminController@saveIdSketch');
     Route::get('/sketch/delete/{id}', 'AdminController@deleteSketch')->where(['id' => '[0-9]+']);
+    Route::get('/sketch/edit/{id}', 'AdminController@editSketch')->where(['id' => '[0-9]+']);
     Route::get('/image-manage', 'AdminController@uploadImg');
     Route::get('/change-password', 'AdminController@changePass');
     Route::post('/change-password', 'AdminController@doChangePass');

@@ -133,8 +133,55 @@ class AdminController extends Controller
     }
 
     public function deleteSketch($id){
+        $oldImage =  DB::table('sketch')->where('id', $id)->select('image')->first();
+        $oldImage = $oldImage->image;
+        if ($oldImage != 'noimage.jpg') {
+            File::delete('images/thum/' . $oldImage);
+        }
         DB::table('sketch')->where('id',$id)->delete();
         return back();
+    }
+
+
+    public function editSketch($id){
+        $info = DB::table('sketch')->where('id',$id)->first();
+        return view ('edit_sketch',['info' => $info]);
+    }
+
+    public function saveIdSketch(Request $request, $id) {
+        $data = $request->input();
+        if ( $request->hasFile('image') ){
+            $image = $request->file('image');
+            $validator = Validator::make(
+                array('file' => $image),
+                array('file' => 'required|mimes:jpeg,png|image|max:2048')
+            );
+            if ($validator->passes()) {
+                $oldImage =  DB::table('sketch')->where('id', $id)->select('image')->first();
+                $oldImage = $oldImage->image;
+                if ($oldImage != 'noimage.jpg') {
+                    File::delete('images/thum/' . $oldImage);
+                }
+                $nameImage = time() . $image->getClientOriginalName();
+                $image->move('images/thum/', $nameImage);
+                DB::table('sketch')
+                    ->where('id', $id)
+                    ->update(['image' => $nameImage]
+                    );
+
+            }else {
+                return back()->with('response', 2);
+            }
+        }
+        DB::table('sketch')
+            ->where('id', $id)
+            ->update(
+                [   'title' => $data['title'],
+                    'content' => $data['content'],
+                    'short_des' => $data['short_des'],
+                ]
+            );
+        return back()->with('response', 1);
     }
 
     public function saveIdProject(Request $request, $id) {
@@ -176,7 +223,6 @@ class AdminController extends Controller
             ]
         );
         return back()->with('response', 1);
-
     }
 
     public function editProject($id) {
@@ -185,6 +231,11 @@ class AdminController extends Controller
     }
 
     public function deleteProject ($id) {
+        $oldImage =  DB::table('overview')->where('id', $id)->select('link_image')->first();
+        $oldImage = $oldImage->link_image;
+        if ($oldImage != 'noimage.jpg') {
+            File::delete('images/thum/' . $oldImage);
+        }
         DB::table('overview')->where('id',$id)->delete();
         return back();
     }
