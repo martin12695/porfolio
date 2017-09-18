@@ -53,7 +53,7 @@
 			{!!$info->content !!}
 		</article>
 	</div>
-	<div class="prj-navigation">
+	<!-- <div class="prj-navigation">
 		<div class="row">
 			<div class="col-xs-6">
 				<a href="#">Back to PROJECTS</a>
@@ -62,8 +62,9 @@
 				<a href="/project/{{$slug_previous}}">Prev </a> / <a href="/project/{{$slug_next}}"> Next</a>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<div class="prj-recommended">
+		<hr>
 		<div class="row">
 			<div class="col-xs-12 title-modules">
 				<h3> BROWSE THE CATALOG </h3>

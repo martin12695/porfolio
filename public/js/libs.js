@@ -12,9 +12,9 @@ $(window).resize(function(){
 });
 
 $(document).ready(function(){
-	// $(this).bind("contextmenu", function(e) {
- //        e.preventDefault();
- //    });
+	$(this).bind("contextmenu", function(e) {
+        e.preventDefault();
+    });
 	
 	$('#backtotop').click(function(){
 		$("html, body").animate({

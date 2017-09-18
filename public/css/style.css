@@ -325,11 +325,11 @@ body img:hover{
 
 #content .project:hover .info{
 	display: block;
-	-webkit-animation: fadein 0.75s; 
-       -moz-animation: fadein 0.75s; 
-       	-ms-animation: fadein 0.75s; 
-         -o-animation: fadein 0.75s;
-            animation: fadein 0.75s;
+	-webkit-animation: fadein 0.5s; 
+       -moz-animation: fadein 0.5s; 
+       	-ms-animation: fadein 0.5s; 
+         -o-animation: fadein 0.5s;
+            animation: fadein 0.5s;
 }
 
 #content .info{
