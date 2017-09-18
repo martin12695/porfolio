@@ -47,45 +47,46 @@
 		}
 
 		$(window).scroll(function() {
-			if (scroll == true) {
-				if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-					$('#loadingData').fadeIn();
-					scroll = false;
-					$.ajax({
-						type: "GET",
-						url: '/getmore/project/' + page,
-						success: function (data) {
-							console.log(data);
-							page++;
-							$.each( data, function( i, val ) {
-								$('#info-content').append(`
+			if (window.location.pathname == '/') {
+				if (scroll == true) {
+					if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+						$('#loadingData').fadeIn();
+						scroll = false;
+						$.ajax({
+							type: "GET",
+							url: '/getmore/project/' + page,
+							success: function (data) {
+								page++;
+								$.each(data, function (i, val) {
+									$('#info-content').append(`
 								<div class="col-sm-4 col-md-3 col-xs-12 data-append" style="display:none;">
 									<div class="project">
-										<a href="/project/` + val.slug +`">
+										<a href="/project/` + val.slug + `">
 											<div class="prv" style="background-image: url('./images/thum/` + val.link_image + `');">&nbsp;</div>
 										</a>
 										<div class="info">
-											<a href="/project/` + val.slug +`">
+											<a href="/project/` + val.slug + `">
 												<h1 class="title">` +
-													val.title +
-												`<hr>
+											val.title +
+											`<hr>
 												</h1>
 												<p class="short-des">` + val.short_des + `</p>
 											</a>
 										</div>
 									</div>
 								</div>`);
-							});
-							var $data = $('.data-append');
-							$data.each(function(){
-								var $this = $(this);
-								$this.removeClass('data-append');
-								$this.fadeIn();
-							});
-							$('#loadingData').fadeOut();
-							if (data.lenght > 0)  scroll = true;
-						},
-					});
+								});
+								var $data = $('.data-append');
+								$data.each(function () {
+									var $this = $(this);
+									$this.removeClass('data-append');
+									$this.fadeIn();
+								});
+								$('#loadingData').fadeOut();
+								if (data.lenght > 0)  scroll = true;
+							},
+						});
+					}
 				}
 			}
 		});

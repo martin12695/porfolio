@@ -75,7 +75,7 @@
 <!--sidebar-menu-->
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
   <ul>
-    <li><a href="#"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+    <li><a href="/dashboard"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
     <li><a href="{{url('/dashboard/project')}}"><i class="icon icon-list-ul"></i> <span>Project</span></a> </li>
 
     <li><a href="{{url('/dashboard/sketch')}}"><i class="icon icon-edit"></i> <span>Sketch</span></a></li>
