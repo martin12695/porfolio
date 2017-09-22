@@ -7,7 +7,7 @@
 
         <div class="span12">
             <!-- Thong bao complete -->
-            @if(Session::get('response') && Session::get('response')==1)
+            {{--@if(Session::get('response') && Session::get('response')==1)
                 <div class="alert alert-success alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
                     <h4 class="alert-heading"><i class="icon-ok"></i>Update sketch successfully!</h4>
                 </div>
@@ -18,7 +18,7 @@
                     <h4 class="alert-heading"><i class="icon-remove-sign"></i> Error!</h4>
                     <span >Please upload image type .jpg, .png and not exceed 2mb  !</span>
                 </div>
-            @endif
+            @endif--}}
             <div id="errorBox" style="display: none;" class="alert alert-error alert-block"> <a class="close" data-dismiss="alert" href="#">×</a>
                 <h4 id="errorTitle" class="alert-heading">Error!</h4>
                 <span id="errorContent">Oop! Somethings happened!</span>
@@ -48,7 +48,7 @@
                                 <textarea class="span11 textarea_editor content ckeditor" rows="12" name="content" id="Content" resize="true">{{$info->content}}</textarea>
                             </div>
                         </div>
-                        <div class="control-group">
+                       {{-- <div class="control-group">
                             <label class="control-label">Thumbnail :</label>
                             <div class="controls">
                                 <label id="fileUpload" for="Thumbnail">Browser</label>
@@ -60,7 +60,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div>--}}
                         <div class="form-actions">
                             <button id="btnSubmit" type="button" class="btn btn-success">Save</button>
                         </div>
@@ -111,7 +111,7 @@
                 }
             });
 
-            function readURL(input) {
+           /* function readURL(input) {
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
 
@@ -130,7 +130,7 @@
                 $('#Thumbnail').val('');
                 $('#imagePreview').hide();
                 $('#fileUpload').show();
-            });
+            });*/
         </script>
         <script language="javascript" src="/js/ckeditor/ckeditor.js" type="text/javascript"></script>
         <script language="javascript" src="/js/ckeditor/config.js" type="text/javascript"></script>

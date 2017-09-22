@@ -48,7 +48,7 @@
                                 <textarea class="span11 textarea_editor content ckeditor" rows="12" name="content" id="Content" resize="true"></textarea>
                             </div>
                         </div>
-                        <div class="control-group">
+                   {{--     <div class="control-group">
                             <label class="control-label">Thumbnail :</label>
                             <div class="controls">
                                 <label id="fileUpload" for="Thumbnail">Browser</label>
@@ -60,7 +60,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div>--}}
                         <div class="form-actions">
                             <button id="btnSubmit" type="button" class="btn btn-success">Save</button>
                         </div>
@@ -108,7 +108,7 @@
                 }
             });
 
-            function readURL(input) {
+         /*   function readURL(input) {
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
 
@@ -127,7 +127,7 @@
                 $('#Thumbnail').val('');
                 $('#imagePreview').hide();
                 $('#fileUpload').show();
-            });
+            });*/
         </script>
         <script language="javascript" src="/js/ckeditor/ckeditor.js" type="text/javascript"></script>
         <script language="javascript" src="/js/ckeditor/config.js" type="text/javascript"></script>

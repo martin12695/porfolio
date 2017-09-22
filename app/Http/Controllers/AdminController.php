@@ -61,7 +61,7 @@ class AdminController extends Controller
     public function saveProject(Request $request) {
     $nameImage = 'noimage.jpg';
     $data = $request->input();
-    if ( $request->hasFile('image') ){
+   /* if ( $request->hasFile('image') ){
         $image = $request->file('image');
         $validator = Validator::make(
             array('file' => $image),
@@ -73,7 +73,7 @@ class AdminController extends Controller
         }else {
             return back()->with('response', 2);
         }
-    }
+    }*/
     $slug = $data['title'];
     $slug = parent::convert_vi_to_en($slug);
     $count = DB::table('overview')
